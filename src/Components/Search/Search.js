@@ -1,8 +1,10 @@
 import React from 'react';
+import Main from '../Main/Main';
 
 const Search = () => {
     return (
         <div className="container p-0">
+            <Main></Main>
             <h1>This is search section </h1>
 
      
