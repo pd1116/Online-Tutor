@@ -4,6 +4,7 @@ import './Main.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Service from '../Service/Service';
+import Navbars from '../Navbars/Navbars';
 
 const Main = () => {
     return (
@@ -17,9 +18,10 @@ const Main = () => {
                         <h2 >Online Tutor</h2>
                     </div>
                     <div class="col-md-6 ">
-
-                        <button class="btn btn-sm btn-primary top-btn m-2">Register</button>
-                        <button class=" btn btn-sm btn-primary top-btn m-2">Login</button>
+                        
+                        
+                        <Link to="/register" class="btn btn-sm btn-primary top-btn text-white m-2">Register</Link>
+                        <Link to="/login" class="btn btn-sm btn-primary top-btn text-white m-2">Login</Link>
 
                     </div>
                     {/* top banner ends here  */}
@@ -53,13 +55,16 @@ const Main = () => {
 
 
 
+
                 </div>
-           
+
 
 
             </div>
-                 {/* Navbar ends here  */}
-                 
+
+            {/* Navbar ends here  */}
+
+
             {/* service section start here */}
             <Service></Service>
             {/* service section ends here */}

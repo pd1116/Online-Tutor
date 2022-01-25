@@ -11,6 +11,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
 
 function App() {
   return (
@@ -25,6 +27,12 @@ function App() {
           </Route>
           <Route path="/search">
           <Search></Search>
+          </Route>
+          <Route path="/login">
+          <Login></Login>
+          </Route>
+          <Route path="/register">
+          <Register></Register>
           </Route>
          
         </Switch>
