@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
+import Login2 from './Components/Login2/Login2';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/register">
           <Register></Register>
+          </Route>
+          <Route path="/login2">
+          <Login2></Login2>
           </Route>
          
         </Switch>
