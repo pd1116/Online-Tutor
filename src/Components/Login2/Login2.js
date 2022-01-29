@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Navbars from '../Navbars/Navbars';
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+
 // import firebaseConfig from '../FirebaseConfig/firebaseConfig'
 const firebaseConfig = {
     apiKey: "AIzaSyCpWcDy2KgVm32aFsjBHdFL1TVk1EUsW0A",
@@ -10,26 +11,39 @@ const firebaseConfig = {
     storageBucket: "nline-tutor-2022.appspot.com",
     messagingSenderId: "555367822954",
     appId: "1:555367822954:web:d215012953a44b8806fc13"
-  };
+};
 
 const app = initializeApp(firebaseConfig);
 const Login2 = () => {
     const provider = new GoogleAuthProvider();
 
-    const [user,setUser] = useState({})
+    const [user, setUser] = useState({
+        issignIn: false,
+        name: '',
+        email: '',
+        photo: ''
+    })
 
+    // sign in pop up
     const handleClick = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider)
             .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
-                // The signed-in user info.
-                const user = result.user;
-                console.log(user);
-                setUser(user);
-                // ...
+                // const user = result.user;
+                const { displayName, email, photoURL } = result.user;
+
+                const userSignIn = {
+                    issignIn: true,
+                    name: displayName,
+                    email: email,
+                    photo: photoURL
+
+                }
+
+                setUser(userSignIn);
+
             }).catch((error) => {
                 // Handle Errors here.
                 const errorCode = error.code;
@@ -41,14 +55,81 @@ const Login2 = () => {
                 // ...
             });
 
+
+    }
+
+    // sign out pop up
+    const handleSignout = () => {
+
+
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            // Sign-out successful.
+
+            const userSignOut = {
+                issignIn: false,
+                name: '',
+                email: '',
+                photo: ''
+            }
+            setUser(userSignOut)
+        }).catch((error) => {
+            // An error happened.
+        });
+
+    }
+const handleBlur = (e)=>{
+    console.log(e.target.name,e.target.value);
+if (e.target.name === 'email'){
+    const isEmailValid = /\S+@\S+\.\S+/.test(e.target.value);
+    console.log(isEmailValid);
+
+ }
+if (e.target.name === 'pass'){
+  
+    const passLengthValid = (e.target.value).length >= 6;
+    const passNumberValid =/(?=.*[0-9])/.test(e.target.value);
+    console.log(passLengthValid && passNumberValid);
+
+ }
+ 
+
+}
+    const handleSubmit = ()=>{
+
     }
     return (
         <div>
             <Navbars></Navbars>
             <h1>fire base login</h1>
-            <button onClick={handleClick} className="btn btn-outline-danger">Signin with Google</button>
-        <h3>Name: {user.displayName}</h3>
-        <p>Email:{user.email}</p>
+            {
+                user.issignIn ? <button onClick={handleSignout} className="btn btn-outline-danger">Sign Out</button> :
+
+                    <button onClick={handleClick} className="btn btn-outline-danger">Sign In </button>
+            }
+            {/* <h3>Name: {user.displayName}</h3>
+        <p>Email:{user.email}</p> */}
+
+            {
+                user.issignIn && <div>
+
+                    <img className="img-thumbnail mt-3" src={user.photo} alt="" />
+                    <h4> Welcome, {user.name}</h4>
+                    <p> Email: {user.email}</p>
+
+                </div>
+
+            }
+
+            <br />
+            <h1>New user Authentication</h1>
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="email" id="" onBlur={handleBlur} placeholder="Enter your email address" required />
+                <br />
+                <input type="password" name="pass" id="" onBlur={handleBlur} placeholder="Enter your email password" required/>
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
 
         </div>
     );
