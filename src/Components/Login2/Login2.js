@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbars from '../Navbars/Navbars';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
 // import firebaseConfig from '../FirebaseConfig/firebaseConfig'
 const firebaseConfig = {
     apiKey: "AIzaSyCpWcDy2KgVm32aFsjBHdFL1TVk1EUsW0A",
@@ -22,7 +22,10 @@ const Login2 = () => {
         name: '',
         email: '',
         pass: '',
-        photo: ''
+        photo: '',
+        error: '',
+        success: false
+
     })
 
     // sign in pop up
@@ -80,9 +83,9 @@ const Login2 = () => {
 
     }
     const handleBlur = (e) => {
-        let isFormValid =true ;
+        let isFormValid = true;
         // if (e.target.name === 'name') {
-           
+
         //     isFormValid = (e.target.value);
         // }
         if (e.target.name === 'email') {
@@ -93,17 +96,47 @@ const Login2 = () => {
             const passNumberValid = /(?=.*[0-9])/.test(e.target.value);
             isFormValid = (passLengthValid && passNumberValid);
         }
-       
+
         if (isFormValid) {
-            const newUser = {...user};
-            newUser[e.target.name] =  e.target.value;
+            const newUser = { ...user };
+            newUser[e.target.name] = e.target.value;
             setUser(newUser);
         }
 
     }
-    const handleSubmit = () => {
+
+    //handle submit work
+    const handleSubmit = (e) => {
+        console.log("sa,", user);
+        if (user.email && user.pass) {
 
 
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, user.email, user.pass)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    const newUser = { ...user };
+                    newUser.error = '';
+                    newUser.success = true;
+                    setUser(newUser);
+
+
+                })
+                .catch((error) => {
+
+                    const errorMessage = error.message;
+
+                    const newUser = { ...user };
+                    newUser.error = errorMessage;
+                    newUser.success = false;
+                    setUser(newUser);
+
+                });
+
+        }
+
+        e.preventDefault();
 
     }
     return (
@@ -131,11 +164,11 @@ const Login2 = () => {
 
             <br />
             <h1>New user Authentication</h1>
-            <p>Name: {user.name}</p>
+            {/* <p>Name: {user.name}</p>
             <p>Email: {user.email}</p>
-            <p>Pass: {user.pass}</p>
+            <p>Pass: {user.pass}</p> */}
             <form onSubmit={handleSubmit}>
-                <input type="text" name="name" onBlur={handleBlur} id="" required placeholder="Your name"/>
+                <input type="text" name="name" onBlur={handleBlur} id="" placeholder="Your name" />
                 <br />
                 <input type="text" name="email" id="" onBlur={handleBlur} placeholder="Enter your email address" required />
                 <br />
@@ -143,6 +176,8 @@ const Login2 = () => {
                 <br />
                 <input type="submit" value="Submit" />
             </form>
+            <p style={{ color: "red" }}>{user.error}</p>
+            {user.success && <p style={{ color: "green" }}>User Created Successfully</p>}
 
         </div>
     );
