@@ -21,6 +21,7 @@ const Login2 = () => {
         issignIn: false,
         name: '',
         email: '',
+        pass: '',
         photo: ''
     })
 
@@ -78,24 +79,31 @@ const Login2 = () => {
         });
 
     }
-const handleBlur = (e)=>{
-    console.log(e.target.name,e.target.value);
-if (e.target.name === 'email'){
-    const isEmailValid = /\S+@\S+\.\S+/.test(e.target.value);
-    console.log(isEmailValid);
+    const handleBlur = (e) => {
+        let isFormValid =true ;
+        // if (e.target.name === 'name') {
+           
+        //     isFormValid = (e.target.value);
+        // }
+        if (e.target.name === 'email') {
+            isFormValid = /\S+@\S+\.\S+/.test(e.target.value);
+        }
+        if (e.target.name === 'pass') {
+            const passLengthValid = (e.target.value).length >= 6;
+            const passNumberValid = /(?=.*[0-9])/.test(e.target.value);
+            isFormValid = (passLengthValid && passNumberValid);
+        }
+       
+        if (isFormValid) {
+            const newUser = {...user};
+            newUser[e.target.name] =  e.target.value;
+            setUser(newUser);
+        }
 
- }
-if (e.target.name === 'pass'){
-  
-    const passLengthValid = (e.target.value).length >= 6;
-    const passNumberValid =/(?=.*[0-9])/.test(e.target.value);
-    console.log(passLengthValid && passNumberValid);
+    }
+    const handleSubmit = () => {
 
- }
- 
 
-}
-    const handleSubmit = ()=>{
 
     }
     return (
@@ -123,10 +131,15 @@ if (e.target.name === 'pass'){
 
             <br />
             <h1>New user Authentication</h1>
+            <p>Name: {user.name}</p>
+            <p>Email: {user.email}</p>
+            <p>Pass: {user.pass}</p>
             <form onSubmit={handleSubmit}>
+                <input type="text" name="name" onBlur={handleBlur} id="" required placeholder="Your name"/>
+                <br />
                 <input type="text" name="email" id="" onBlur={handleBlur} placeholder="Enter your email address" required />
                 <br />
-                <input type="password" name="pass" id="" onBlur={handleBlur} placeholder="Enter your email password" required/>
+                <input type="password" name="pass" id="" onBlur={handleBlur} placeholder="Enter your email password" required />
                 <br />
                 <input type="submit" value="Submit" />
             </form>
