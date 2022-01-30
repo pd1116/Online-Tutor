@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 // import firebaseConfig from '../FirebaseConfig/firebaseConfig'
 const firebaseConfig = {
     apiKey: "AIzaSyCpWcDy2KgVm32aFsjBHdFL1TVk1EUsW0A",
@@ -123,6 +124,7 @@ const Login2 = () => {
                     newUser.error = '';
                     newUser.success = true;
                     setUser(newUser);
+                    updateUser(user.name)
 
 
                 })
@@ -156,6 +158,7 @@ const Login2 = () => {
                     newUser.error = '';
                     newUser.success = true;
                     setUser(newUser);
+                    console.log("my name: ",userCredential.user);
                     // ...
                 })
                 .catch((error) => {
@@ -173,6 +176,18 @@ const Login2 = () => {
         }
 
         e.preventDefault();
+        // Update user name 
+        const updateUser =name=>{
+        
+const auth = getAuth();
+updateProfile(auth.currentUser, {
+  displayName: name
+}).then(() => {
+  console.log("username update successfully completed");
+}).catch((error) => {
+    console.log(error);
+});
+        }
 
     }
     return (
@@ -211,7 +226,7 @@ const Login2 = () => {
                 <br />
                 <input type="password" name="pass" id="" onBlur={handleBlur} placeholder="Enter your  password" required />
                 <br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value={newUserSign ?"SignUp" : "Sign IN"} />
             </form>
             <p style={{ color: "red" }}>{user.error}</p>
             {user.success && <p style={{ color: "green" }}>User {newUserSign ? 'Created' : 'Logged In'} Successfully</p>}
