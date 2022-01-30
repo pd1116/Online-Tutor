@@ -3,6 +3,7 @@ import Navbars from '../Navbars/Navbars';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 // import firebaseConfig from '../FirebaseConfig/firebaseConfig'
 const firebaseConfig = {
     apiKey: "AIzaSyCpWcDy2KgVm32aFsjBHdFL1TVk1EUsW0A",
@@ -16,6 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const Login2 = () => {
     const provider = new GoogleAuthProvider();
+    const [newUserSign, setNewUserSign] = useState(false);
 
     const [user, setUser] = useState({
         issignIn: false,
@@ -107,8 +109,9 @@ const Login2 = () => {
 
     //handle submit work
     const handleSubmit = (e) => {
-        console.log("sa,", user);
-        if (user.email && user.pass) {
+
+        // if new user
+        if (newUserSign && user.email && user.pass) {
 
 
             const auth = getAuth();
@@ -132,6 +135,39 @@ const Login2 = () => {
                     newUser.success = false;
                     setUser(newUser);
 
+                });
+
+        }
+        //if not new user 
+
+
+
+
+        if (!newUserSign && user.email && user.pass) {
+
+
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, user.email, user.pass)
+                .then((userCredential) => {
+                    // Signed in 
+               
+                    const user = userCredential.user;
+                    const newUser = { ...user };
+                    newUser.error = '';
+                    newUser.success = true;
+                    setUser(newUser);
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                   
+
+                    const newUser = { ...user };
+                    newUser.error = errorMessage;
+                    newUser.success = false;
+                    setUser(newUser);
                 });
 
         }
@@ -164,20 +200,21 @@ const Login2 = () => {
 
             <br />
             <h1>New user Authentication</h1>
-            {/* <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>Pass: {user.pass}</p> */}
+
+            <input type="checkbox" onChange={() => setNewUserSign(!newUserSign)} name="newUserSign" id="" />
+            <label htmlFor="newUserSign"> New User SignUp</label>
+
             <form onSubmit={handleSubmit}>
-                <input type="text" name="name" onBlur={handleBlur} id="" placeholder="Your name" />
+                {newUserSign && <input type="text" name="name" onBlur={handleBlur} id="" placeholder="Your name" />}
                 <br />
                 <input type="text" name="email" id="" onBlur={handleBlur} placeholder="Enter your email address" required />
                 <br />
-                <input type="password" name="pass" id="" onBlur={handleBlur} placeholder="Enter your email password" required />
+                <input type="password" name="pass" id="" onBlur={handleBlur} placeholder="Enter your  password" required />
                 <br />
                 <input type="submit" value="Submit" />
             </form>
             <p style={{ color: "red" }}>{user.error}</p>
-            {user.success && <p style={{ color: "green" }}>User Created Successfully</p>}
+            {user.success && <p style={{ color: "green" }}>User {newUserSign ? 'Created' : 'Logged In'} Successfully</p>}
 
         </div>
     );
