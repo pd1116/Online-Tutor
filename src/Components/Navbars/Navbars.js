@@ -32,6 +32,8 @@ const Navbars = () => {
 </Navbar.Collapse>
 
 </Navbar>
+
+
             
         </div>
     );

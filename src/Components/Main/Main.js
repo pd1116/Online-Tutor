@@ -34,7 +34,16 @@ const Main = () => {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 {/* <Link to="/home" >Home</Link> */}
-                                <Nav.Link href="/home" >Home</Nav.Link>
+
+
+
+                                {/* i have to use link tag insted of <a href></a> ...if i use it it will reload the browser .
+                                 */}
+
+
+
+
+                                <Nav.Link  href="/home" >Home</Nav.Link>
                                 <Nav.Link href="/search">Search Tutor</Nav.Link>
                                 <NavDropdown title="Features" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Features</NavDropdown.Item>
@@ -45,7 +54,7 @@ const Main = () => {
 
                                 </NavDropdown>
 
-                                <Nav.Link href="#link">Classroom</Nav.Link>
+                                <Nav.Link href="/link">Classroom</Nav.Link>
                                 <Nav.Link href="#link">Contact Us</Nav.Link>
 
                             </Nav>
