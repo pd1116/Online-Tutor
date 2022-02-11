@@ -5,6 +5,7 @@ import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Service from '../Service/Service';
 import Navbars from '../Navbars/Navbars';
+import ExploreTutor from '../ExploreTutor/ExploreTutor';
 
 const Main = () => {
     return (
@@ -34,7 +35,16 @@ const Main = () => {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 {/* <Link to="/home" >Home</Link> */}
-                                <Nav.Link href="/home" >Home</Nav.Link>
+
+
+
+                                {/* i have to use link tag insted of <a href></a> ...if i use it it will reload the browser .
+                                 */}
+
+
+
+
+                                <Nav.Link  href="/home" >Home</Nav.Link>
                                 <Nav.Link href="/search">Search Tutor</Nav.Link>
                                 <NavDropdown title="Features" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Features</NavDropdown.Item>
@@ -45,7 +55,7 @@ const Main = () => {
 
                                 </NavDropdown>
 
-                                <Nav.Link href="#link">Classroom</Nav.Link>
+                                <Nav.Link href="/link">Classroom</Nav.Link>
                                 <Nav.Link href="#link">Contact Us</Nav.Link>
 
                             </Nav>
@@ -64,10 +74,15 @@ const Main = () => {
 
             {/* Navbar ends here  */}
 
-
+            
             {/* service section start here */}
             <Service></Service>
             {/* service section ends here */}
+
+
+                                 {/* explore tutor start here */}
+            <ExploreTutor></ExploreTutor>
+            {/* explore tutor ends here */}
 
         </div>
     );
