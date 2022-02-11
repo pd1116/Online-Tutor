@@ -16,6 +16,7 @@ import Login2 from './Components/Login2/Login2';
 function App() {
   return (
     <div className="App">
+     
  <Router>
 <Switch>
           <Route exact path="/">
