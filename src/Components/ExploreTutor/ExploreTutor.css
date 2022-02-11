@@ -1,0 +1,51 @@
+.Explore{
+    display: flex;
+    /* -webkit-box-pack: center;
+    -ms-flex-pack: center; */
+    justify-content: center;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+
+.join{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 15px;
+    padding: 65px 35px 45px;
+    background-color: #fff;
+    color: #a8acbd;
+}
+.join h3 {
+    font-size: 38px;
+    font-weight: 500;
+    margin-bottom: 1.3em;
+    text-align: center;
+    color: #7aa3e4;
+}
+.join  span {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: #a8acbd;
+}
+.sectionnGap{
+   
+        padding-top: 40px;
+        padding-bottom: 40px;
+    
+}
+
+li {
+ 
+    /* display: flex; */
+    align-items: center;
+    margin-bottom: 16px;
+    text-align: left;
+}
+ul {
+        padding: 0;
+        margin: 0;
+        
+    }
