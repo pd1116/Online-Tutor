@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Service from '../Service/Service';
 import Navbars from '../Navbars/Navbars';
 import ExploreTutor from '../ExploreTutor/ExploreTutor';
+import MeetTutor from '../MeetTutor/MeetTutor';
 
 const Main = () => {
     return (
@@ -83,7 +84,9 @@ const Main = () => {
               {/* explore tutor start here */}
             <ExploreTutor></ExploreTutor>
             {/* explore tutor ends here */}
-
+                {/* meet tutor start here */}
+                <MeetTutor></MeetTutor>
+                                {/* meet tutor ends here */}
         </div>
     );
 };

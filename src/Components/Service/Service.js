@@ -7,7 +7,7 @@ import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 
 const Service = () => {
     return (
-        <div className="service  py-5">
+        <div className="service  py-5 ">
           {/* Service section  */}
 
 

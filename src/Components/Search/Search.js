@@ -4,7 +4,7 @@ import Navbars from '../Navbars/Navbars';
 
 const Search = () => {
     return (
-        <div className="container p-0">
+        <div className="container p-0 ">
             <Navbars></Navbars>
             <h1>This is search section </h1>
 

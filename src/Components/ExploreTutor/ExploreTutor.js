@@ -4,7 +4,7 @@ import './ExploreTutor.css'
 const ExploreTutor = () => {
     return (
         <div className="bg-danger container">
-            <h1 className="py-3">Explore teacher</h1>
+            <h1 className="py-3 text-light">Explore teacher</h1>
 
 
             <div className="Explore">
