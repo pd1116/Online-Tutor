@@ -80,7 +80,7 @@ const Main = () => {
             {/* service section ends here */}
 
 
-                                 {/* explore tutor start here */}
+              {/* explore tutor start here */}
             <ExploreTutor></ExploreTutor>
             {/* explore tutor ends here */}
 
