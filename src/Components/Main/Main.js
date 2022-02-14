@@ -7,6 +7,7 @@ import Service from '../Service/Service';
 import Navbars from '../Navbars/Navbars';
 import ExploreTutor from '../ExploreTutor/ExploreTutor';
 import MeetTutor from '../MeetTutor/MeetTutor';
+import AboutUs from '../AboutUs/AboutUs';
 
 const Main = () => {
     return (
@@ -87,6 +88,10 @@ const Main = () => {
                 {/* meet tutor start here */}
                 <MeetTutor></MeetTutor>
                                 {/* meet tutor ends here */}
+
+                            {/* Aboutus start here */} 
+                            <AboutUs></AboutUs>       
+                            {/* Aboutus ends here */}        
         </div>
     );
 };
