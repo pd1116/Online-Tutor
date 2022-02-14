@@ -7,7 +7,7 @@ const AboutUs = () => {
             <section class="sectionnGap"></section>
             <div className="row">
                 <div className="col-md-4">
-                    <img style={{width: '100%', height: ''}} className='' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkn0YQQNBxin8MRXFppIRGnQPYqG-CNVNVK6ktQ6rWS_-mjMZ41szzu9YsMQoQr0GNuHo&usqp=CAU" alt="aboutimg" />
+                    <img style={{width: '90%', height: ''}} className='' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkn0YQQNBxin8MRXFppIRGnQPYqG-CNVNVK6ktQ6rWS_-mjMZ41szzu9YsMQoQr0GNuHo&usqp=CAU" alt="aboutimg" />
 
 
                 </div>

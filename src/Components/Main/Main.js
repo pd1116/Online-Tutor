@@ -8,6 +8,9 @@ import Navbars from '../Navbars/Navbars';
 import ExploreTutor from '../ExploreTutor/ExploreTutor';
 import MeetTutor from '../MeetTutor/MeetTutor';
 import AboutUs from '../AboutUs/AboutUs';
+import UsefulInfo from '../UsefulInfo/UsefulInfo';
+import LearningVideo from '../LearningVideo/LearningVideo';
+import Footer from '../Footer/Footer';
 
 const Main = () => {
     return (
@@ -92,6 +95,16 @@ const Main = () => {
                             {/* Aboutus start here */} 
                             <AboutUs></AboutUs>       
                             {/* Aboutus ends here */}        
+                            {/* Usefulinfo start here */} 
+                          <UsefulInfo></UsefulInfo>  
+                            {/* Usefulinfo ends here */}    
+
+                            {/* Learning video start here */} 
+                          <LearningVideo></LearningVideo> 
+                            {/* Learning video ends here */}        
+                            {/* Footer start here */} 
+                          <Footer></Footer>
+                            {/* Footer  ends here */}        
         </div>
     );
 };
