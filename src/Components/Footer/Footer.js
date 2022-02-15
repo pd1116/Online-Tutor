@@ -15,9 +15,9 @@ const Footer = () => {
                 <div className="col-md-4 col-sm-12 ">
                     <div className="social pb-3">
                     <h3>Follow us</h3>
-                    <a href="http://facebook.com/"><FacebookOutlinedIcon></FacebookOutlinedIcon></a>
-                    <a href="http://twitter.com/"><TwitterIcon></TwitterIcon></a>
-                    <a href="http://twitter.com/"><InstagramIcon></InstagramIcon></a>
+                    <a href="http://facebook.com/"><FacebookOutlinedIcon className=""></FacebookOutlinedIcon></a>
+                    <a href="http://twitter.com/"><TwitterIcon className="text-info"></TwitterIcon></a>
+                    <a href="http://twitter.com/"><InstagramIcon className="text-danger"></InstagramIcon></a>
                     
                     </div>
                     <p>&nbsp;©  2021-2012, onlinetutor.com : All rights reserved.</p>
@@ -26,7 +26,7 @@ const Footer = () => {
                 <div className="col-md-4 col-sm-12">
                 <div className="social pb-3">
                     <h3>Customer Service</h3>
-                   <a href="#"> <WhatsAppIcon></WhatsAppIcon></a> <h5>01303001354</h5>
+                   <a href="#" > <WhatsAppIcon className="text-success"></WhatsAppIcon></a> <h5>01303001354</h5>
                     <h6>How it works?</h6>
                     <h6>FAQ</h6>
 
