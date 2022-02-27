@@ -13,7 +13,7 @@ const AboutUs = () => {
                 </div>
                 <div className="col-md-8 abouttutor">
                     <h1> About Online Tutor</h1>
-                    <p>My Tutor, at its core, is about helping students, parents and educators connect. However, it is also so much more. We are a team of parents and teachers, dealing with the challenges faced by students and parents in digital Bangladesh. We have built a platform to help parents connect with tutors - more importantly - we are connecting students to the power of online tutoring and so much more.</p>
+                    <p className="text-secondary">My Tutor, at its core, is about helping students, parents and educators connect. However, it is also so much more. We are a team of parents and teachers, dealing with the challenges faced by students and parents in digital Bangladesh. We have built a platform to help parents connect with tutors - more importantly - we are connecting students to the power of online tutoring and so much more.</p>
 
                     <h3>WHAT YOU GET:</h3>
                     <table>

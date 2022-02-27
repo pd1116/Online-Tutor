@@ -20,8 +20,8 @@ const Footer = () => {
                     <a href="http://twitter.com/"><InstagramIcon className="text-danger"></InstagramIcon></a>
                     
                     </div>
-                    <p>&nbsp;©  2021-2012, onlinetutor.com : All rights reserved.</p>
-                    <p>Privacy Policy&nbsp;&nbsp;&nbsp;Terms of Service &nbsp;&nbsp; </p>
+                    <p>&nbsp;©Copyright {(new Date).getFullYear()}, onlinetutor.com : All Rights Reserved.</p>
+                    <p>Privacy Policy&nbsp;&nbsp;Terms of Service &nbsp;&nbsp; </p>
                 </div>
                 <div className="col-md-4 col-sm-12">
                 <div className="social pb-3">

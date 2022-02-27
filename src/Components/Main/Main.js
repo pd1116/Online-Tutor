@@ -11,6 +11,7 @@ import AboutUs from '../AboutUs/AboutUs';
 import UsefulInfo from '../UsefulInfo/UsefulInfo';
 import LearningVideo from '../LearningVideo/LearningVideo';
 import Footer from '../Footer/Footer';
+import OurTutor from '../OurTutor/OurTutor';
 
 const Main = () => {
     return (
@@ -24,8 +25,8 @@ const Main = () => {
                         <h2 >Online Tutor</h2>
                     </div>
                     <div class="col-md-6 ">
-                        
-                        
+
+
                         <Link to="/register" class="btn btn-sm btn-primary top-btn text-white m-2">Register</Link>
                         <Link to="/login" class="btn btn-sm btn-primary top-btn text-white m-2">Login</Link>
 
@@ -49,7 +50,7 @@ const Main = () => {
 
 
 
-                                <Nav.Link  href="/home" >Home</Nav.Link>
+                                <Nav.Link href="/home" >Home</Nav.Link>
                                 <Nav.Link href="/search">Search Tutor</Nav.Link>
                                 <NavDropdown title="Features" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Features</NavDropdown.Item>
@@ -79,32 +80,41 @@ const Main = () => {
 
             {/* Navbar ends here  */}
 
-            
+
             {/* service section start here */}
             <Service></Service>
             {/* service section ends here */}
 
 
-              {/* explore tutor start here */}
+            {/* explore tutor start here */}
             <ExploreTutor></ExploreTutor>
             {/* explore tutor ends here */}
-                {/* meet tutor start here */}
-                <MeetTutor></MeetTutor>
-                                {/* meet tutor ends here */}
+            {/* meet tutor start here */}
+            <MeetTutor></MeetTutor>
+            {/* meet tutor ends here */}
 
-                            {/* Aboutus start here */} 
-                            <AboutUs></AboutUs>       
-                            {/* Aboutus ends here */}        
-                            {/* Usefulinfo start here */} 
-                          <UsefulInfo></UsefulInfo>  
-                            {/* Usefulinfo ends here */}    
 
-                            {/* Learning video start here */} 
-                          <LearningVideo></LearningVideo> 
-                            {/* Learning video ends here */}        
-                            {/* Footer start here */} 
-                          <Footer></Footer>
-                            {/* Footer  ends here */}        
+            {/* Aboutus start here */}
+            <AboutUs></AboutUs>
+            {/* Aboutus ends here */}
+
+
+            {/* Our Tutor start here */}
+            <OurTutor></OurTutor>
+
+            {/*Our tutor tutor ends here */}
+
+
+            {/* Usefulinfo start here */}
+            <UsefulInfo></UsefulInfo>
+            {/* Usefulinfo ends here */}
+
+            {/* Learning video start here */}
+            <LearningVideo></LearningVideo>
+            {/* Learning video ends here */}
+            {/* Footer start here */}
+            <Footer></Footer>
+            {/* Footer  ends here */}
         </div>
     );
 };

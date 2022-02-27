@@ -3,7 +3,7 @@ import './ExploreTutor.css'
 
 const ExploreTutor = () => {
     return (
-        <div className="bg-danger container">
+        <div className=" container explore_tutor">
             <h1 className="py-3 text-light">Explore teacher</h1>
 
 
@@ -23,8 +23,8 @@ const ExploreTutor = () => {
 
 
                         {/* //teacher */}
-                <div className="join">
-                    <h3><span >Join as a </span>TUTOR</h3>
+                <div className="join " style={{color:'#fff',backgroundColor:'#7aa3e4' }}>
+                    <h3 className="text-light"><span className="text-light">Join as a </span>TUTOR</h3>
                     <ul>
                         <li>Our site is completely free for tutors.</li>
 
