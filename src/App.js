@@ -13,6 +13,7 @@ import {
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Login2 from './Components/Login2/Login2';
+import Login3 from './Components/Login3.js/Login3';
 
 function App() {
   return (
@@ -29,8 +30,8 @@ function App() {
           <Route path="/search">
           <Search></Search>
           </Route>
-          <Route path="/login">
-          <Login></Login>
+          <Route path="/login3">
+          <Login3></Login3>
           </Route>
           <Route path="/register">
           <Register></Register>

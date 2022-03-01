@@ -28,7 +28,7 @@ const Main = () => {
 
 
                         <Link to="/register" class="btn btn-sm btn-primary top-btn text-white m-2">Register</Link>
-                        <Link to="/login" class="btn btn-sm btn-primary top-btn text-white m-2">Login</Link>
+                        <Link to="/login3" class="btn btn-sm btn-primary top-btn text-white m-2">Login</Link>
 
                     </div>
                     {/* top banner ends here  */}
