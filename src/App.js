@@ -1,7 +1,8 @@
 import './App.css';
+import React from 'react';
 import Main from './Components/Main/Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+
 import Search from './Components/Search/Search';
 import {
   BrowserRouter as Router,
