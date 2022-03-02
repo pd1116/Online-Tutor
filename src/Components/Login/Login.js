@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Container, Typography, TextField, Button,Grid, CircularProgress, Alert } from '@mui/material';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../FirebaseConfig/useAuth';
 import Navbars from '../Navbars/Navbars';
 
@@ -9,6 +9,12 @@ import Navbars from '../Navbars/Navbars';
 const Login = () => {
     const [loginData, setLoginData] = useState({});
     const {user,loginUser,Loading,authError} = useAuth();
+    
+    
+    const  location =useLocation();
+    const history =useHistory();
+
+
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -19,7 +25,7 @@ const Login = () => {
     //form submit
     const handleLoginSubmit = e => {
 
-        loginUser(loginData.email, loginData.password);
+        loginUser(loginData.email, loginData.password,location,history);
     
         e.preventDefault();
     }
