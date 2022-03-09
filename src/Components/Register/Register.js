@@ -98,7 +98,7 @@ const Register = () => {
                                 aria-labelledby="demo-row-radio-buttons-group-label"
                                 name="row-radio-buttons-group">
                                 <FormLabel id="demo-row-radio-buttons-group-label "   sx={{ m: 2 }} >Log in As a </FormLabel>
-                                <FormControlLabel value="teacher" control={<Radio />} label="Teacherr" />
+                                <FormControlLabel value="teacher" control={<Radio />} label="Teacher" />
                                 <FormControlLabel value="student" control={<Radio />} label="Student" />
                                 
                             </RadioGroup>
