@@ -1,9 +1,5 @@
 .explore_tutor{
-    /* background-image:url('../../images/study2.jpg'); */
-    /* background-image:url('../../images/study\ 1.jpg');
-    background-size: cover;
-     */
-        /* background: #263b5a url('../../images/study\ 1.jpg') no-repeat center/cover; */
+
         background: linear-gradient(to left, rgba(92, 92, 197, 0.3), rgba(170, 143, 163, 0.3)),  url('../../images/study\ 1.jpg') no-repeat center/cover;
   
 }

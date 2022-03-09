@@ -1,19 +1,21 @@
 import React from 'react';
-import './AboutUs.css'
+import './AboutUs.css';
+import teacher2 from '../../images/teacher 2.jpg';
+import teacher1 from '../../images/teacher.jpg';
 
 const AboutUs = () => {
     return (
         <div className="aboutus">
             <section class="sectionnGap"></section>
             <div className="row">
-                <div className="col-md-4">
-                    <img style={{width: '90%', height: ''}} className='' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkn0YQQNBxin8MRXFppIRGnQPYqG-CNVNVK6ktQ6rWS_-mjMZ41szzu9YsMQoQr0GNuHo&usqp=CAU" alt="aboutimg" />
+                <div className="col-md-5">
+                    <img style={{width: '100%',padding:"20px", height: ''}}  className='' src={teacher1} alt="aboutimg" />
 
 
                 </div>
-                <div className="col-md-8 abouttutor">
+                <div className="col-md-7 abouttutor">
                     <h1> About Online Tutor</h1>
-                    <p className="text-secondary">My Tutor, at its core, is about helping students, parents and educators connect. However, it is also so much more. We are a team of parents and teachers, dealing with the challenges faced by students and parents in digital Bangladesh. We have built a platform to help parents connect with tutors - more importantly - we are connecting students to the power of online tutoring and so much more.</p>
+                    <p className="text-secondary">Online Tutor, at its core, is about helping students, parents and educators connect. However, it is also so much more. We are a team of parents and teachers, dealing with the challenges faced by students and parents in digital Bangladesh. We have built a platform to help parents connect with tutors - more importantly - we are connecting students to the power of online tutoring and so much more.</p>
 
                     <h3>WHAT YOU GET:</h3>
                     <table>

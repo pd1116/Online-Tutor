@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ExploreTutor.css'
 
 const ExploreTutor = () => {
@@ -18,7 +19,8 @@ const ExploreTutor = () => {
                         <li>Manage your lessons through our bookings system</li>
                         <li>If you are not satisfied with your tutor we will refund our fee</li>
                     </ul>
-                    <div class="joinbtn"><a class="btn btn-primary " href="#">REGISTER</a></div>
+    
+                    <div class="joinbtn"><Link class="btn btn-primary " to="/register">REGISTER</Link></div>
                 </div>
 
 
@@ -32,7 +34,8 @@ const ExploreTutor = () => {
                         <li>Tutor both face to face or online using our interactive whiteboard</li>
                         <li>Search for tuition jobs using our search</li>
                     </ul>
-                    <div class="joinbtn"><a class="btn btn-outline-danger " href="#">REGISTER</a></div>
+ 
+                    <div class="joinbtn"><Link class="btn btn-outline-danger" to="/register">REGISTER</Link></div>
                 </div>
 
 

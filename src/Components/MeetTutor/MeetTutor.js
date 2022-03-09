@@ -1,5 +1,9 @@
 import React from 'react';
-import './MeetTutor.css'
+import './MeetTutor.css';
+import teacher1 from '../../images/teacher.jpg';
+import teacher2 from '../../images/teacher 2.jpg';
+
+
 
 const MeetTutor = () => {
     return (
@@ -16,8 +20,9 @@ const MeetTutor = () => {
                     <h2><strong>3. Coaching and Groups</strong></h2>
                     <p><span className="text-secondary" style={{ fontSize: '18px' }}>Some students excel in &nbsp; coaching &nbsp; sessions - others thrive in group tutoring sessions. These are all tools to help you achieve your educational goals. We give you a choice to use the tool that fits you.</span></p>
                 </div>
+
                 <div className="onlinetutor col-md-4 col-sm-12">
-                   <img className="" style={{width: '100%', height: ''}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkn0YQQNBxin8MRXFppIRGnQPYqG-CNVNVK6ktQ6rWS_-mjMZ41szzu9YsMQoQr0GNuHo&usqp=CAU" alt="img" />
+                   <img style={{width: '100%',padding:"20px", height: ''}} className="img-fluid"  src={teacher1} alt="img" />
                    
                 </div>
 

@@ -82,12 +82,24 @@ const Register = () => {
                             <RadioGroup
                                   row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
-                                name="row-radio-buttons-group"
-                                
-                            >
+                                name="row-radio-buttons-group">
                                 <FormLabel id="demo-row-radio-buttons-group-label "   sx={{ width: '20%', m: 2 }} >Gender</FormLabel>
                                 <FormControlLabel value="female" control={<Radio />} label="Female" />
                                 <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                
+                            </RadioGroup>
+                        </FormControl>
+
+                        
+                        <FormControl>
+                            
+                            <RadioGroup
+                                  row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group">
+                                <FormLabel id="demo-row-radio-buttons-group-label "   sx={{ m: 2 }} >Log in As a </FormLabel>
+                                <FormControlLabel value="teacher" control={<Radio />} label="Teacherr" />
+                                <FormControlLabel value="student" control={<Radio />} label="Student" />
                                 
                             </RadioGroup>
                         </FormControl>
