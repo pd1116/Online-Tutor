@@ -19,6 +19,9 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AuthProvider from './Components/FirebaseConfig/AuthProvider';
 import Login from './Components/Login/Login';
 
+import AllRes from './Components/UsefullinfoDetails/AllRes';
+import Qus1 from './Components/UsefullinfoDetails/Qus1';
+
 function App() {
   return (
     <div className="App">
@@ -46,10 +49,24 @@ function App() {
               <Post></Post>
             </PrivateRoute>
 
+
+{/* all resource */}
+            <Route path="/res">
+          <AllRes></AllRes>
+            </Route>
+            <Route path="/qus1">
+          <Qus1></Qus1>
+            </Route>
+
+
           </Switch>
         </Router>
-      </AuthProvider>
 
+
+      
+
+      </AuthProvider>
+      
 
     
     </div>

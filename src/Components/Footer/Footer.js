@@ -20,6 +20,7 @@ const Footer = () => {
                     <a href="http://twitter.com/"><TwitterIcon className="text-info"></TwitterIcon></a>
                     <a href="http://twitter.com/"><InstagramIcon className="text-danger"></InstagramIcon></a>
                     
+                    
                     </div>
                     <p>&nbsp;©Copyright {(new Date()).getFullYear()}, onlinetutor.com : All Rights Reserved.</p>
                     <p>Privacy Policy&nbsp;&nbsp;Terms of Service &nbsp;&nbsp; </p>

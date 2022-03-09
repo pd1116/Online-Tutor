@@ -22,7 +22,7 @@ const MeetTutor = () => {
                 </div>
 
                 <div className="onlinetutor col-md-4 col-sm-12">
-                   <img style={{width: '100%',padding:"20px", height: ''}} className="img-fluid"  src={teacher1} alt="img" />
+                   <img style={{width: '100%',padding:"20px", height: ''}} className=""  src={teacher1} alt="img" />
                    
                 </div>
 
