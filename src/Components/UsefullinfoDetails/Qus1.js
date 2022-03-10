@@ -6,7 +6,7 @@ const Qus1 = () => {
     return (
         <div className=" allres">
 
-<Navbars></Navbars>
+ 
 
             <div className="container qus">
                 <h1 class="text-left pt-5">How to start tutoring at Online Tutor</h1>

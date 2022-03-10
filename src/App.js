@@ -21,6 +21,7 @@ import Login from './Components/Login/Login';
 
 import AllRes from './Components/UsefullinfoDetails/AllRes';
 import Qus1 from './Components/UsefullinfoDetails/Qus1';
+import Qus2 from './Components/UsefullinfoDetails/Qus2';
 
 function App() {
   return (
@@ -50,12 +51,37 @@ function App() {
             </PrivateRoute>
 
 
-{/* all resource */}
+            {/* all resource */}
             <Route path="/res">
-          <AllRes></AllRes>
+              <AllRes></AllRes>
             </Route>
             <Route path="/qus1">
-          <Qus1></Qus1>
+              <Qus1></Qus1>
+            </Route>
+            <Route path="/qus2">
+
+          <Qus2></Qus2>
+            </Route>
+            <Route path="/qus3">
+              <Qus1></Qus1>
+            </Route>
+            <Route path="/qus4">
+              <Qus1></Qus1>
+            </Route>
+            <Route path="/qus5">
+              <Qus1></Qus1>
+            </Route>
+            <Route path="/qus6">
+              <Qus1></Qus1>
+            </Route>
+            <Route path="/qus7">
+              <Qus1></Qus1>
+            </Route>
+            <Route path="/qus8">
+              <Qus1></Qus1>
+            </Route>
+            <Route path="/qus9">
+              <Qus1></Qus1>
             </Route>
 
 
@@ -63,12 +89,12 @@ function App() {
         </Router>
 
 
-      
+
 
       </AuthProvider>
-      
 
-    
+
+
     </div>
   );
 }

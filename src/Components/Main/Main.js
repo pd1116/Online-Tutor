@@ -17,7 +17,7 @@ import Navbars from '../Navbars/Navbars';
 
 const Main = () => {
     return (
-        <div className="container">
+        <div className="">
             <div className="container bg-dark text-white ">
 
                 {/* top banner start here  */}
