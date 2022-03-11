@@ -1,0 +1,28 @@
+.login_btn{
+    text-decoration: none;
+    border: 1px solid #bdc3c7;
+    border-radius:20px;
+    font-size: 18px;
+    padding: 8px;
+    color: black;
+    transition: 1s ease;
+}
+
+.login_btn:hover{
+    background-color:#bdc3c7;
+   
+}
+.header h4{
+  font-size: 20px;
+  letter-spacing: 3px;
+
+}
+.header h1{
+font-family:'Courier New', Courier, monospace;
+font-weight:bolder;
+  letter-spacing: 2px;
+
+}
+.header_icon{
+    color: #7aa3e6;
+}

@@ -1,17 +1,33 @@
 import React from 'react';
-import './OurTutor.css'
+import { Card, Carousel } from 'react-bootstrap';
+import './OurTutor.css';
+import nayeem from '../../images/student 4.jpg'
 
-const OurTutor = () => {
+
+const OurTutor = ({ x2 }) => {
     return (
-        <div className="Our_Tutor ">   
-        
-        <h1 className="title">What's Our teachers </h1>
-        <h1 className="title">Says</h1>
-        {/* <hr style={{border: '2px solid black'}}></hr> */}
- 
-        <section class="sectionnGap"></section>
-        
-    </div>
+        <div className=" col-md-4 ">
+
+            <div className="div">
+            <Card  className="w-70 mx-5 my-5 img-fluid p-2">
+                <img className="teacherimg mx-auto d-block"  variant="top" src={nayeem}alt="" />
+             
+                <Card.Body>
+                    <Card.Title>Name: {x2.name}</Card.Title>
+                    <Card.Text>
+                        <p><b> Institute: </b>{x2.versity}</p>
+                        <p><b> Location: </b>{x2.Location}</p>
+
+                        <small>{x2.description}</small>
+                    </Card.Text>
+
+                </Card.Body>
+            </Card>
+                </div>
+
+            <section class="sectionnGap"></section>
+
+        </div>
     );
 };
 

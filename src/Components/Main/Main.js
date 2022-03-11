@@ -1,8 +1,7 @@
 import React from 'react';
 import './Main.css';
 
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
 import Service from '../Service/Service';
 
 import ExploreTutor from '../ExploreTutor/ExploreTutor';
@@ -14,39 +13,24 @@ import Footer from '../Footer/Footer';
 import OurTutor from '../OurTutor/OurTutor';
 import Navbars from '../Navbars/Navbars';
 
+import useAuth from '../FirebaseConfig/useAuth';
+import Header from '../Header/Header';
+import OurTutorInfo from '../OurTutor/OurTutorInfo';
+
 
 const Main = () => {
+    const { user, logout } = useAuth();
+
     return (
-        <div className="">
-            <div className="container bg-dark text-white ">
-
-                {/* top banner start here  */}
-
-                <div class="row mt-1 ">
-                    <div class=" col text-center ">
-                        <h2 class="text-center" >Online Tutor</h2>
-                    </div>
-
-
-
-                    {/* <Link to="/register" class="btn btn-sm btn-primary top-btn text-white m-2">Register</Link>
-                        <Link to="/login" class="btn btn-sm btn-primary top-btn text-white m-2">Login</Link> */}
-
-
-                    {/* top banner ends here  */}
-
-
-
-                </div>
-
-
-
-
-            </div>
+        <div className="bg-white ">
+            <Header></Header>
+          
             {/* Navbar start here  */}
             <Navbars></Navbars>
-         
+
+
             {/* Navbar ends here  */}
+
 
 
             {/* service section start here */}
@@ -68,7 +52,8 @@ const Main = () => {
 
 
             {/* Our Tutor start here */}
-            <OurTutor></OurTutor>
+            {/* <OurTutor></OurTutor> */}
+            <OurTutorInfo></OurTutorInfo>
 
             {/*Our tutor tutor ends here */}
 

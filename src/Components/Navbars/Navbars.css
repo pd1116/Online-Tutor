@@ -1,0 +1,20 @@
+
+
+.nav_bar {
+    background-color:#7aa3e6;
+    padding:0px;margin: 0px;
+ 
+   
+}
+.nav_bar a {
+    background-color:#7aa3e6;
+    color: whitesmoke;
+    transition:0.4s ease;
+    font-size:20px;
+}
+.nav_bar a:hover{
+    background-color:#34495e;
+  
+    color: whitesmoke;
+   
+} 
