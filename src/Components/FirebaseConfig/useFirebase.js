@@ -20,6 +20,25 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
 
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
+
+//signin with google
+
+const signInWithGoogle = (location, history) => {
+    // setIsLoading(true);
+    signInWithPopup(auth, googleProvider)
+        .then((result) => {
+            const user = result.user;
+            // saveUser(user.email, user.displayName, 'PUT');
+            setAuthError('');
+            const destination = location?.state?.from || '/';
+            history.replace(destination);
+        }).catch((error) => {
+            setAuthError(error.message);
+        });
+}
+
+
 
     const registerUser = (email, password) => {
         setLoading(true);
@@ -92,6 +111,7 @@ const useFirebase = () => {
         user,
         registerUser,
         loginUser,
+        signInWithGoogle,
         logout,
         Loading,
         authError,

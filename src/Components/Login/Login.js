@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Container, Typography, TextField, Button,Grid, CircularProgress, Alert } from '@mui/material';
+import {Typography, TextField, Button,Grid, CircularProgress, Alert } from '@mui/material';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../FirebaseConfig/useAuth';
 import Navbars from '../Navbars/Navbars';
@@ -9,11 +9,11 @@ import loginImg from '../../images/login img.webp'
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const {user,loginUser,Loading,authError} = useAuth();
+    const {user,loginUser,Loading,authError,signInWithGoogle} = useAuth();
+    const location = useLocation();
+    const history = useHistory();
     
     
-    const  location =useLocation();
-    const history =useHistory();
 
 
     const handleOnChange = e => {
@@ -31,9 +31,9 @@ const Login = () => {
         e.preventDefault();
     }
 
-    
+    //gooogle
     const handleGoogleSignIn = () => {
-       alert("Google")
+        signInWithGoogle(location, history);
     }
     return (
    <div className="login">
