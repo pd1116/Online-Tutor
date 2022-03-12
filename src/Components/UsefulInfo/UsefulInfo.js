@@ -8,7 +8,7 @@ import InfoIcon from '@mui/icons-material/Info';
 
 const UsefulInfo = () => {
     return (
-        <div className="useful-info">
+        <div className="useful-info container">
             
             <h1 className="pb-5"><InfoIcon sx={{ fontSize: 35,mb: 1, }}></InfoIcon> Useful Tutor Information </h1>
             <ul>

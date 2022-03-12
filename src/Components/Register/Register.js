@@ -7,6 +7,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import useAuth from '../FirebaseConfig/useAuth';
+import Navbars from '../Navbars/Navbars';
 // import useAuth from './useAuth';
 
 
@@ -20,7 +21,7 @@ const Register = () => {
 
     const [loginData, setLoginData] = useState({});
 
- const {user,registerUser,Loading,authError} = useAuth();
+    const { user, registerUser, Loading, authError } = useAuth();
 
 
     const handleOnBlur = e => {
@@ -35,12 +36,14 @@ const Register = () => {
             alert('Your password did not match');
             return
         }
-        registerUser (loginData.email, loginData.password)
+        registerUser(loginData.email, loginData.password)
         e.preventDefault();
     }
     return (
-        <Container>
 
+
+        <div className="register">
+            <Navbars></Navbars>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>Register</Typography>
@@ -78,29 +81,30 @@ const Register = () => {
                             variant="standard" />
 
                         <FormControl>
-                            
+
                             <RadioGroup
-                                  row
+                                row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
                                 name="row-radio-buttons-group">
-                                <FormLabel id="demo-row-radio-buttons-group-label "   sx={{ width: '20%', m: 2 }} >Gender</FormLabel>
+                                <FormLabel id="demo-row-radio-buttons-group-label " sx={{ width: '20%', m: 2 }} >Gender</FormLabel>
                                 <FormControlLabel value="female" control={<Radio />} label="Female" />
                                 <FormControlLabel value="male" control={<Radio />} label="Male" />
-                                
+
                             </RadioGroup>
                         </FormControl>
+                                
+                                <br />
 
-                        
                         <FormControl>
-                            
+
                             <RadioGroup
-                                  row
+                                row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
                                 name="row-radio-buttons-group">
-                                <FormLabel id="demo-row-radio-buttons-group-label "   sx={{ m: 2 }} >Log in As a </FormLabel>
+                                <FormLabel id="demo-row-radio-buttons-group-label " sx={{ m: 2 }} >Log in As a </FormLabel>
                                 <FormControlLabel value="teacher" control={<Radio />} label="Teacher" />
                                 <FormControlLabel value="student" control={<Radio />} label="Student" />
-                                
+
                             </RadioGroup>
                         </FormControl>
 
@@ -117,7 +121,7 @@ const Register = () => {
                         Loading && <CircularProgress />
                     }
 
-                   
+
                     {user?.email && <Alert severity="success">User Created successfully!</Alert>}
                     {authError && <Alert severity="error">{authError}</Alert>}
 
@@ -126,7 +130,8 @@ const Register = () => {
                     <img style={{ width: '100%' }} src="" alt="" />
                 </Grid>
             </Grid>
-        </Container>
+        </div>
+
     );
 };
 

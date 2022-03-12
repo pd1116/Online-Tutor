@@ -1,6 +1,4 @@
-body {
-    background-color: #eee;
-}
+
 
 *[role="form"] {
     max-width: 530px;
@@ -13,5 +11,13 @@ body {
 *[role="form"] h2 {
     /* margin-left: 5em; */
     margin-bottom: 1em;
+}
+.search_tutor {
+  
+text-align: left;
+}
+.search_tutor label {
+   padding: 5px 0px;
+text-align: left;
 }
 

@@ -35,8 +35,9 @@ const Login = () => {
        
     }
     return (
-        <Container>
-            <Navbars></Navbars>
+   <div className="login">
+
+<Navbars></Navbars>
         <Grid container spacing={2}>
             <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                 <Typography variant="body1" gutterBottom>Login</Typography>
@@ -74,7 +75,8 @@ const Login = () => {
                 <img style={{ width: '100%' }} src="{login}" alt="" />
             </Grid>
         </Grid>
-    </Container>
+
+   </div>
     );
 };
 

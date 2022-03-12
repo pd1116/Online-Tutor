@@ -18,7 +18,6 @@ import Post from './Components/Post/Post';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AuthProvider from './Components/FirebaseConfig/AuthProvider';
 import Login from './Components/Login/Login';
-
 import AllRes from './Components/UsefullinfoDetails/AllRes';
 import Qus1 from './Components/UsefullinfoDetails/Qus1';
 import Qus2 from './Components/UsefullinfoDetails/Qus2';
@@ -30,6 +29,7 @@ import Qus7 from './Components/UsefullinfoDetails/Qus7';
 import Qus8 from './Components/UsefullinfoDetails/Qus8';
 import Qus9 from './Components/UsefullinfoDetails/Qus9';
 import Contact from './Components/Contact/Contact';
+import OurTutorInfo from './Components/OurTutor/OurTutorInfo';
 
 function App() {
   return (
@@ -93,6 +93,9 @@ function App() {
             </Route>
             <Route path="/qus9">
               <Qus9></Qus9>
+            </Route>
+            <Route path="/review">
+              <OurTutorInfo></OurTutorInfo>
             </Route>
 
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import './MeetTutor.css';
 import teacher1 from '../../images/teacher.jpg';
-import teacher2 from '../../images/teacher 2.jpg';
+
 
 
 
 const MeetTutor = () => {
     return (
-        <div className="meetTutor ">
+        <div className="meetTutor container ">
             <h1 className="pt-5">Meet the best Online tutor in BD</h1>
             <div className="row pt-5 ">
                 <div className="onlinetutor col-md-8 col-sm-12">
@@ -22,7 +22,7 @@ const MeetTutor = () => {
                 </div>
 
                 <div className="onlinetutor col-md-4 col-sm-12">
-                   <img style={{width: '100%',padding:"20px", height: ''}} className=""  src={teacher1} alt="img" />
+                   <img   className=" img-fluid rounded"  src={teacher1} alt="img" />
                    
                 </div>
 

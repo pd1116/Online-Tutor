@@ -16,6 +16,7 @@ import Navbars from '../Navbars/Navbars';
 import useAuth from '../FirebaseConfig/useAuth';
 import Header from '../Header/Header';
 import OurTutorInfo from '../OurTutor/OurTutorInfo';
+import HomeSearch from '../HomeSearch/HomeSearch';
 
 
 const Main = () => {
@@ -31,6 +32,8 @@ const Main = () => {
 
             {/* Navbar ends here  */}
 
+            <HomeSearch></HomeSearch>
+
 
 
             {/* service section start here */}
@@ -45,7 +48,7 @@ const Main = () => {
             <MeetTutor></MeetTutor>
             {/* meet tutor ends here */}
 
-
+    
             {/* Aboutus start here */}
             <AboutUs></AboutUs>
             {/* Aboutus ends here */}
