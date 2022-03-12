@@ -7,12 +7,12 @@ import './Search.css'
 
 const Search = () => {
     return (
-        <div className="container p-0 ">
+        <div className="search_tutor">
             <Navbars></Navbars>
             {/* <Search2></Search2> */}
             <div className="row">
                 <div className="col-md-6">
-                    <h2>Search Tutor</h2>
+                    
 
                     <form className="" role="form">
                         <h2 className="text-center">Search Tutor</h2>

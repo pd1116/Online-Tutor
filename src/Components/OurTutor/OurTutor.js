@@ -1,24 +1,24 @@
 import React from 'react';
 import { Card, Carousel } from 'react-bootstrap';
 import './OurTutor.css';
-import nayeem from '../../images/student 4.jpg'
+// import nayeem from '../../images/student 4.jpg'
 
 
-const OurTutor = ({ x2 }) => {
+const OurTutor = ({ info }) => {
     return (
         <div className=" col-md-4 ">
 
-            <div className="div">
-            <Card  className="w-70 mx-5 my-5 img-fluid p-2">
-                <img className="teacherimg mx-auto d-block"  variant="top" src={nayeem}alt="" />
+            <div className="">
+            <Card  className="techers_card   my-5 py-3 w-100">
+                <img className="teacherimg mx-auto d-block"  variant="top" src={info.icon}alt="" />
              
                 <Card.Body>
-                    <Card.Title>Name: {x2.name}</Card.Title>
-                    <Card.Text>
-                        <p><b> Institute: </b>{x2.versity}</p>
-                        <p><b> Location: </b>{x2.Location}</p>
+                    <Card.Title>Name: {info.name}</Card.Title>
+                    <Card.Text  className="card_text">
+                        <p><b> Institute: </b>{info.versity}</p>
+                        <p><b> Location: </b>{info.Location}</p>
 
-                        <small>{x2.description}</small>
+                        <small>{info.description}</small>
                     </Card.Text>
 
                 </Card.Body>

@@ -3,7 +3,21 @@
     
 }
 .teacherimg{
-    height:200px;
-    width:200px;
+    height:150px;
+    width:150px;
     border-radius: 50%;
+}
+.card_text{
+    text-align: left;
+    line-height:22px;
+}
+.card_text p{
+   padding:0px;
+   margin: 2px;
+}
+.techers_card:hover{
+    box-shadow:5px 5px 25px #7aa3e6;
+    /* box-shadow:5px 5px 25px #34495e; */
+    transition: 0.3s ease;
+    cursor: pointer;
 }

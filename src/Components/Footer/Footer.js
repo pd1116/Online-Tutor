@@ -16,9 +16,9 @@ const Footer = () => {
                 <div className="col-md-4 col-sm-12 ">
                     <div className="social pb-3">
                     <h3>Follow us</h3>
-                    <a href="http://facebook.com/"><FacebookOutlinedIcon className=""></FacebookOutlinedIcon></a>
-                    <a href="http://twitter.com/"><TwitterIcon className="text-info"></TwitterIcon></a>
-                    <a href="http://twitter.com/"><InstagramIcon className="text-danger"></InstagramIcon></a>
+                    <a href="http://facebook.com/" target="_blank"><FacebookOutlinedIcon className=""></FacebookOutlinedIcon></a>
+                    <a href="http://twitter.com/" target="_blank"><TwitterIcon className="text-info"></TwitterIcon></a>
+                    <a href="http://instagram.com/" target="_blank"><InstagramIcon className="text-danger"></InstagramIcon></a>
                     
                     
                     </div>
@@ -39,7 +39,7 @@ const Footer = () => {
                 <div className="col-md-4 col-sm-12">
                 <div className=" pb-3">
                     <h3>About</h3>
-                    <p>My Tutor makes it easy to search and find professional top-rated tutors across Bangladesh.</p>
+                    <p>Online Tutor makes it easy to search and find professional top-rated tutors across Bangladesh.</p>
                  
                     <button className="btn btn-primary">Join our Website Today <DoubleArrowIcon></DoubleArrowIcon></button>
                    
