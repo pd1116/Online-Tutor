@@ -2,7 +2,6 @@ import React from 'react';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import AddIcCallOutlinedIcon from '@mui/icons-material/AddIcCallOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../FirebaseConfig/useAuth';
 import './Header.css'

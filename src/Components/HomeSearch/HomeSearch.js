@@ -14,6 +14,7 @@ const HomeSearch = () => {
             {/* <h1 className="text-center text-white">Find a Tutor </h1> */}
             
             <Search></Search>
+            
             <section class="sectionnGap"></section>
          </div>
             

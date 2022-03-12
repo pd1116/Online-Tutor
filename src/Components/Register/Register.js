@@ -9,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import useAuth from '../FirebaseConfig/useAuth';
 import Navbars from '../Navbars/Navbars';
 // import useAuth from './useAuth';
+import register from '../../images/register.webp'
 
 
 
@@ -127,7 +128,7 @@ const Register = () => {
 
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src="" alt="" />
+                    <img style={{ width: '100%' }} src={register} alt="" />
                 </Grid>
             </Grid>
         </div>
