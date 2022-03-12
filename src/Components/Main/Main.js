@@ -27,7 +27,7 @@ const Main = () => {
             <Header></Header>
           
             {/* Navbar start here  */}
-            <Navbars></Navbars>
+            {/* <Navbars></Navbars> */}
 
 
             {/* Navbar ends here  */}

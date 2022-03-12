@@ -4,14 +4,16 @@ import Navbars from '../Navbars/Navbars';
 import './Search.css'
 import SearchIcon from '@mui/icons-material/Search';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
 
 
 const Search = () => {
     return (
         <div className="search_tutor">
-           
+          <Navbars></Navbars>
        
-            <div className="row  ">
+            <div className="row pt-5 ">
                 <div className=" col-md-7 ">
                     
 
@@ -117,23 +119,6 @@ const Search = () => {
                 </div> */}
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     );

@@ -32,7 +32,7 @@ const Login = () => {
 
     
     const handleGoogleSignIn = () => {
-       
+       alert("Google")
     }
     return (
    <div className="login">

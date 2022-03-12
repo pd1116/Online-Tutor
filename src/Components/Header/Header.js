@@ -14,7 +14,7 @@ const Header = () => {
 
             {/* top banner start here  */}
 
-            <div class="row mx-5 py-4">
+            <div class="row mx-5 pt-4">
                 <div class=" col-md-4  ">
                     <h1 class="text-center" >Online Tutor</h1>
                 </div>
