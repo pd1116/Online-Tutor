@@ -86,7 +86,7 @@ const Search = () => {
                         </div>
                         {/* select range*/}
                         <div className="select_class">
-                            <label> Ralary Range: </label>
+                            <label> Salary Range: </label>
                             <select class="form-control" aria-label="Default select example">
                                 <option selected>None</option>
                                 <option value="1">1000-2000</option>
