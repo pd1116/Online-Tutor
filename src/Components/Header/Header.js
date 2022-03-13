@@ -22,7 +22,7 @@ const Header = () => {
                     <h4 class=" text-center pt-2 " ><span class="header_icon"><AddIcCallOutlinedIcon sx={{ fontSize: 35, mr: 1 }}></AddIcCallOutlinedIcon></span> 01303001354  
                     {
                         user?.email ?
-                            <Link to="/login" onClick={logout} class="login_btn  text-dark mx-5"><span class="header_icon"><LogoutIcon sx={{ fontSize: 30, mr: 1 }}></LogoutIcon></span>LogOut {user.email}</Link>
+                            <Link to="/login" onClick={logout} class="login_btn  text-dark mx-5"><span class="header_icon"><LogoutIcon sx={{ fontSize: 30, mr: 1 }}></LogoutIcon></span>LogOut {user.displayName}</Link>
 
                             :
                            
