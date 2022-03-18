@@ -3,11 +3,9 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-// import AddIcCallIcon from '@mui/icons-material/AddIcCall';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { Link } from 'react-router-dom';
 
-// import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -16,9 +14,10 @@ const Footer = () => {
                 <div className="col-md-4 col-sm-12 ">
                     <div className="social pb-3">
                     <h3>Follow us</h3>
-                    <a href="http://facebook.com/" target="_blank"><FacebookOutlinedIcon className=""></FacebookOutlinedIcon></a>
-                    <a href="http://twitter.com/" target="_blank"><TwitterIcon className="text-info"></TwitterIcon></a>
-                    <a href="http://instagram.com/" target="_blank"><InstagramIcon className="text-danger"></InstagramIcon></a>
+                    {/* <a href="http://facebook.com/" target="_blank"><FacebookOutlinedIcon className=""></FacebookOutlinedIcon></a> */}
+                    <a href="http://facebook.com/" ><FacebookOutlinedIcon className=""></FacebookOutlinedIcon></a>
+                    <a href="http://twitter.com/" ><TwitterIcon className="text-info"></TwitterIcon></a>
+                    <a href="http://instagram.com/" ><InstagramIcon className="text-danger"></InstagramIcon></a>
                     
                     
                     </div>

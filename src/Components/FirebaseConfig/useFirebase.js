@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup,  signOut } from "firebase/auth";
 import { initializeApp } from 'firebase/app';
 
 
@@ -11,7 +11,8 @@ const firebaseConfig = {
     messagingSenderId: "555367822954",
     appId: "1:555367822954:web:d215012953a44b8806fc13"
 };
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
+ initializeApp(firebaseConfig);
 
 
 const useFirebase = () => {
@@ -30,6 +31,7 @@ const signInWithGoogle = (location, history) => {
         .then((result) => {
             const user = result.user;
             // saveUser(user.email, user.displayName, 'PUT');
+            console.log(user);
             setAuthError('');
             const destination = location?.state?.from || '/';
             history.replace(destination);

@@ -7,12 +7,12 @@ import swal from 'sweetalert';
 import './Contact.css'
 
 const Contact = () => {
-    const handleOnBlur = () => {
+    // const handleOnBlur = () => {
 
-    }
-    const handleLoginSubmit = () => {
+    // }
+    // const handleLoginSubmit = () => {
 
-    }
+    // }
     const popUp = () => {
         swal({
             title: "Thanks for contacting us!",
@@ -33,7 +33,8 @@ const Contact = () => {
                     <div class="row">
                         <div class="col-md-3">
                             <div class="contact-info">
-                                <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image" />
+                              
+                                <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="" />
                                 <h2>Contact Us</h2>
                                 <h4>We would love to hear from you !</h4>
                             </div>

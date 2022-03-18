@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbars from '../Navbars/Navbars';
+
 
 const Qus1 = () => {
     return (

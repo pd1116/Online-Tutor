@@ -2,22 +2,20 @@ import React from 'react';
 
 import Navbars from '../Navbars/Navbars';
 import './Search.css'
-import SearchIcon from '@mui/icons-material/Search';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+
 
 
 
 const Search = () => {
     return (
         <div className="search_tutor">
-          <Navbars></Navbars>
-       
+            <Navbars></Navbars>
+
             <div className="row pt-5 ">
                 <div className=" col-md-7 ">
-                    
 
-                    <form className="" role="form">
+
+                    <form role= "form">
                         <h2 className="text-center">Search Tutor</h2>
                         {/* select medium  */}
                         <div className="select_class">
@@ -106,11 +104,11 @@ const Search = () => {
                                 <input type="location" id="location" placeholder="e.g: Mirpur 2, Dhaka" className="form-control" />
                             </div>
                         </div>
-                     
 
-                         <input type="submit"  value="Search" className="btn btn-success my-3 w-100" />
 
-{/* <SearchIcon></SearchIcon> */}
+                        <input type="submit" value="Search" className="btn btn-success my-3 w-100" />
+
+                        {/* <SearchIcon></SearchIcon> */}
                     </form>
 
                 </div>

@@ -10,21 +10,21 @@ import AboutUs from '../AboutUs/AboutUs';
 import UsefulInfo from '../UsefulInfo/UsefulInfo';
 import LearningVideo from '../LearningVideo/LearningVideo';
 import Footer from '../Footer/Footer';
-import OurTutor from '../OurTutor/OurTutor';
-import Navbars from '../Navbars/Navbars';
 
-import useAuth from '../FirebaseConfig/useAuth';
+// import useAuth from '../FirebaseConfig/useAuth';
 import Header from '../Header/Header';
 import OurTutorInfo from '../OurTutor/OurTutorInfo';
 import HomeSearch from '../HomeSearch/HomeSearch';
+import Teacher from '../../Pages/Teacher/Teacher';
 
 
 const Main = () => {
-    const { user, logout } = useAuth();
+    // const { user, logout } = useAuth();
 
     return (
         <div className="bg-white ">
             <Header></Header>
+            <Teacher></Teacher>
           
             {/* Navbar start here  */}
             {/* <Navbars></Navbars> */}
