@@ -15,7 +15,7 @@ const Search = () => {
                 <div className=" col-md-7 ">
 
 
-                    <form role= "form">
+                    <form >
                         <h2 className="text-center">Search Tutor</h2>
                         {/* select medium  */}
                         <div className="select_class">
@@ -104,7 +104,7 @@ const Search = () => {
                                 <input type="location" id="location" placeholder="e.g: Mirpur 2, Dhaka" className="form-control" />
                             </div>
                         </div>
-
+ 
 
                         <input type="submit" value="Search" className="btn btn-success my-3 w-100" />
 

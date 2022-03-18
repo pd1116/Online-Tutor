@@ -94,7 +94,7 @@ const signInWithGoogle = (location, history) => {
 
         return () => unsubscribe;
 
-    }, [])
+    }, [auth])
 
 
 
