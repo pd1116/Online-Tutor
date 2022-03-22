@@ -3,11 +3,12 @@ import { Nav, Navbar} from 'react-bootstrap';
 import {  NavLink } from 'react-router-dom';
 
 import './Navbars.css';
-// import useAuth from '../../Components/FirebaseConfig/useAuth';
+import useAuth from '../../Components/FirebaseConfig/useAuth';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const Navbars = () => {
 
-    //   const {user,logout} =useAuth(); 
+      const {user,logout} =useAuth(); 
 
     return (
         <div className="">
@@ -37,7 +38,12 @@ const Navbars = () => {
                        
                     </Nav>
 
-                  
+                    {
+                       user?.email && 
+                        <NavLink to="/teachermain"  class="login_btn  text-white d-flex align-items-center"><span class="header_icon"><LogoutIcon sx={{ fontSize: 30, mr: 1 }}></LogoutIcon></span>Name:  {user.displayName}</NavLink>
+
+                          
+                    }
                    
 
 

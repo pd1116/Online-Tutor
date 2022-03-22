@@ -15,7 +15,8 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import OurTutorInfo from '../OurTutor/OurTutorInfo';
 import HomeSearch from '../HomeSearch/HomeSearch';
-import Teacher from '../../Pages/Teacher/Teacher';
+// import TeacherMain from '../../Pages/Teacher/TeacherMain/TeacherMain';
+
 
 
 const Main = () => {
@@ -24,7 +25,8 @@ const Main = () => {
     return (
         <div className="bg-white ">
             <Header></Header>
-            <Teacher></Teacher>
+            {/* <TeacherMain></TeacherMain> */}
+        
           
             {/* Navbar start here  */}
             {/* <Navbars></Navbars> */}

@@ -30,11 +30,20 @@ import Qus8 from './Components/UsefullinfoDetails/Qus8';
 import Qus9 from './Components/UsefullinfoDetails/Qus9';
 import Contact from './Components/Contact/Contact';
 import OurTutorInfo from './Components/OurTutor/OurTutorInfo';
+import TeacherProfile from './Pages/Teacher/TeacherProfile/TeacherProfile';
+import Notification from './Pages/Teacher/Notification/Notification';
+import Newsfeed from './Pages/Teacher/Newsfeed/Newsfeed';
+import TeacherMain from './Pages/Teacher/TeacherMain/TeacherMain';
+import Posts from './Components/Post/Posts';
 
 function App() {
+
+
   return (
     <div className="App">
+
       <AuthProvider>
+     
         <Router>
           <Switch>
             <Route exact path="/">
@@ -56,6 +65,10 @@ function App() {
 
             <PrivateRoute path="/post">
               <Post></Post>
+            </PrivateRoute>
+
+            <PrivateRoute path="/posts">
+              <Posts></Posts>
             </PrivateRoute>
             <Route path="/contact">
               <Contact></Contact>
@@ -96,6 +109,23 @@ function App() {
             </Route>
             <Route path="/review">
               <OurTutorInfo></OurTutorInfo>
+            </Route>
+
+
+          {/* teacher section */}
+
+
+          <PrivateRoute path="/teachermain">
+              <TeacherMain></TeacherMain>
+            </PrivateRoute>
+            <Route path="/teacherprofile">
+             <TeacherProfile></TeacherProfile>
+            </Route>
+            <Route path="/notification">
+             <Notification></Notification>
+            </Route>
+            <Route path="/newsfeed">
+            <Newsfeed></Newsfeed>
             </Route>
 
 

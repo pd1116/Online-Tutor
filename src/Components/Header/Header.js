@@ -5,7 +5,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
 import useAuth from '../FirebaseConfig/useAuth';
 import './Header.css'
-
+// import tutor from '../../images/Online Tutor.png'
 const Header = () => {
     const { user, logout } = useAuth();
     return (
@@ -16,6 +16,7 @@ const Header = () => {
             <div class="row mx-5 pt-4">
                 <div class=" col-md-4  ">
                     <h1 class="text-center" >Online Tutor</h1>
+                    {/* <img src={tutor}alt="" /> */}
                 </div>
                 <div class=" col-md-8  ">
 
