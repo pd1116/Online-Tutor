@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal';
-import { useForm } from "react-hook-form";
 import { Button, Grid, TextField, Typography } from '@mui/material';
 
 const customStyles = {
@@ -17,10 +16,14 @@ Modal.setAppElement('#root');
 
 const TeacherSetting = ({ modalIsOpen, closeModal }) => {
     const handleOnBlur = e => {
-       
+        const field = e.target.name;
+        const value = e.target.value;
+        console.log( value);
         
     }
-    const handleLoginSubmit = e => {
+    const handleSettingSubmit = e => {
+        const value = e.target.value;
+        console.log(value); 
         
         e.preventDefault();
     }
@@ -52,7 +55,7 @@ const TeacherSetting = ({ modalIsOpen, closeModal }) => {
 
                     <Grid item sx={{ mt: 2 }} xs={12} md={12}>
 
-                        <form onSubmit={handleLoginSubmit}>
+                        <form onSubmit={handleSettingSubmit}>
                             <TextField
                                 sx={{ width: '100%', m: 1 }}
                                 id="standard-basic"
