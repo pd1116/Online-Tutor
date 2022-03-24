@@ -35,6 +35,8 @@ import Notification from './Pages/Teacher/Notification/Notification';
 import Newsfeed from './Pages/Teacher/Newsfeed/Newsfeed';
 import TeacherMain from './Pages/Teacher/TeacherMain/TeacherMain';
 import Posts from './Components/Post/Posts';
+import StudentMain from './Pages/Student/StudentMain/StudentMain';
+import StudentProfile from './Pages/Student/StudentProfile/StudentProfile';
 
 function App() {
 
@@ -121,10 +123,25 @@ function App() {
             <Route path="/teacherprofile">
              <TeacherProfile></TeacherProfile>
             </Route>
-            <Route path="/notification">
+            <Route path="/tnotification">
              <Notification></Notification>
             </Route>
-            <Route path="/newsfeed">
+            <Route path="/tnewsfeed">
+            <Newsfeed></Newsfeed>
+            </Route>
+
+
+            {/* Student section  */}
+          <PrivateRoute path="/studentmain">
+              <StudentMain></StudentMain>
+            </PrivateRoute>
+            <Route path="/studentprofile">
+             <StudentProfile></StudentProfile>
+            </Route>
+            <Route path="/studentnotification">
+             <Notification></Notification>
+            </Route>
+            <Route path="/studentnewsfeed">
             <Newsfeed></Newsfeed>
             </Route>
 

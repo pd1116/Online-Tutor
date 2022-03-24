@@ -1,15 +1,17 @@
 import React from 'react';
 import Header from '../../../Components/Header/Header';
 import Newsfeed from '../Newsfeed/Newsfeed';
+import StudentNavbar from '../StudentNavbar/StudentNavbar';
 
-import TeacherNavbar from '../TeacherNavbar/TeacherNavbar';
+// import TeacherNavbar from '../TeacherNavbar/TeacherNavbar';
 
 
-const TeacherMain = () => {
+const StudentMain = () => {
     return (
         <div>
             <Header></Header>
-           <TeacherNavbar></TeacherNavbar>
+            <StudentNavbar></StudentNavbar>
+   
            <Newsfeed></Newsfeed>
            
          
@@ -20,4 +22,4 @@ const TeacherMain = () => {
     );
 };
 
-export default TeacherMain;
+export default StudentMain;

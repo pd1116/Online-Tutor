@@ -14,7 +14,7 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-const TeacherSetting = ({ modalIsOpen, closeModal }) => {
+const StudentSetting = ({ modalIsOpen, closeModal }) => {
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -100,4 +100,4 @@ const TeacherSetting = ({ modalIsOpen, closeModal }) => {
     );
 };
 
-export default TeacherSetting;
+export default StudentSetting;

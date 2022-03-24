@@ -15,7 +15,8 @@ const Header = () => {
 
             <div class="row mx-5 pt-4">
                 <div class=" col-md-4  ">
-                    <h1 class="text-center" >Online Tutor</h1>
+                   <Link style={{textDecoration: "none",color:"black" }} to="/"> <h1 class="text-center" >Online Tutor</h1></Link>
+                   {/* <h1 class="text-center" >Online Tutor</h1> */}
                     {/* <img src={tutor}alt="" /> */}
                 </div>
                 <div class=" col-md-8  ">
