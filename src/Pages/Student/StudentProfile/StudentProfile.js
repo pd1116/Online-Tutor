@@ -7,17 +7,15 @@ import { Link } from 'react-router-dom';
 
 import { Card } from 'react-bootstrap';
 import useAuth from '../../../Components/FirebaseConfig/useAuth';
-// import TeacherSetting from '../TeacherSetting/TeacherSetting';
-// import TeacherUpdate from '../TeacherUpdate/TeacherUpdate';
+
 import Footer from '../../../Components/Footer/Footer';
 import StudentNavbar from '../StudentNavbar/StudentNavbar';
 import StudentSetting from '../StudentSetting/StudemtSetting';
+import StudentUpdate from '../StudentUpdate/StudentUpdate';
 const StudentProfile= () => {
     const { user, logout } = useAuth();
     console.log("My user:,", user);
-    const Handle = () => {
-        alert("rs")
-    }
+  
 
     // modal setup
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -71,6 +69,7 @@ const StudentProfile= () => {
                                         <p><b> Phone: </b>{ }</p>
                                         <p><b> Gender: </b>{ }</p>
                                         <p><b> Institute: </b>{ }</p>
+                                        <p><b> Location: </b>{ }</p>
 
 
 
@@ -98,7 +97,7 @@ const StudentProfile= () => {
             {/* modal */}
             {/* passing modal info */}
             <StudentSetting closeModal={closeModal} modalIsOpen={modalIsOpen}></StudentSetting>
-            {/* <TeacherUpdate closeModal2={closeModal2} modalIsOpen2={modalIsOpen2}></TeacherUpdate> */}
+            <StudentUpdate closeModal2={closeModal2} modalIsOpen2={modalIsOpen2}></StudentUpdate>
 
             {/* added footer here */}
             <Footer></Footer>
