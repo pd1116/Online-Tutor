@@ -6,7 +6,7 @@ import './TeacherProfile.css';
 import { Link } from 'react-router-dom';
 
 import { Card } from 'react-bootstrap';
-import useAuth from '../../../Components/FirebaseConfig/useAuth';
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 import TeacherSetting from '../TeacherSetting/TeacherSetting';
 import TeacherUpdate from '../TeacherUpdate/TeacherUpdate';
 import Footer from '../../../Components/Footer/Footer';

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import {Typography, TextField, Button,Grid, CircularProgress, Alert } from '@mui/material';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
-import useAuth from '../FirebaseConfig/useAuth';
+import useAuth from './FirebaseConfig/useAuth';
 import Navbars from '../Navbars/Navbars';
 import loginImg from '../../images/login img.webp'
 

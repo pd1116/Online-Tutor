@@ -3,7 +3,7 @@ import { Nav, Navbar} from 'react-bootstrap';
 import {  NavLink } from 'react-router-dom';
 
 import './Navbars.css';
-import useAuth from '../../Components/FirebaseConfig/useAuth';
+import useAuth from '../Login/FirebaseConfig/useAuth';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const Navbars = () => {

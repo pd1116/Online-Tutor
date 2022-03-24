@@ -26,11 +26,6 @@ const Main = () => {
         <div className="bg-white ">
             <Header></Header>
             {/* <TeacherMain></TeacherMain> */}
-        
-          
-            {/* Navbar start here  */}
-            {/* <Navbars></Navbars> */}
-
 
             {/* Navbar ends here  */}
 

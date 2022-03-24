@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../../Components/FirebaseConfig/useAuth';
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 
 import LogoutIcon from '@mui/icons-material/Logout';
 const TeacherNavbar = () => {

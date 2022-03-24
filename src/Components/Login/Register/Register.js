@@ -6,10 +6,10 @@ import { NavLink, } from 'react-router-dom';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import useAuth from '../FirebaseConfig/useAuth';
-import Navbars from '../Navbars/Navbars';
-// import useAuth from './useAuth';
-import register from '../../images/register.webp'
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth'
+
+import register from '../../../images/register.webp'
+import Navbars from '../../Navbars/Navbars';
 
 
 
@@ -26,6 +26,7 @@ const Register = () => {
 
 
     const handleOnBlur = e => {
+        console.log(e);
         const field = e.target.name;
         const value = e.target.value;
         const newLoginData = { ...loginData };
@@ -38,13 +39,14 @@ const Register = () => {
             return
         }
         registerUser(loginData.email, loginData.password)
+      console.log(loginData);
         e.preventDefault();
     }
     return (
 
 
         <div className="register">
-            <Navbars></Navbars>
+           <Navbars></Navbars>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>Register</Typography>
@@ -84,12 +86,13 @@ const Register = () => {
                         <FormControl>
 
                             <RadioGroup
+                             onBlur={handleOnBlur}
                                 row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
-                                name="row-radio-buttons-group">
+                                name="Gender">
                                 <FormLabel id="demo-row-radio-buttons-group-label " sx={{ width: '20%', m: 2 }} >Gender</FormLabel>
-                                <FormControlLabel value="female" control={<Radio />} label="Female" />
-                                <FormControlLabel value="male" control={<Radio />} label="Male" />
+                                <FormControlLabel value="female"   name="female" control={<Radio />} label="Female" />
+                                <FormControlLabel value="male"   name="male"  control={<Radio />} label="Male" />
 
                             </RadioGroup>
                         </FormControl>
@@ -99,12 +102,13 @@ const Register = () => {
                         <FormControl>
 
                             <RadioGroup
+                            onBlur={handleOnBlur}
                                 row
                                 aria-labelledby="demo-row-radio-buttons-group-label"
-                                name="row-radio-buttons-group">
+                                name="role">
                                 <FormLabel id="demo-row-radio-buttons-group-label " sx={{ m: 2 }} >Log in As a </FormLabel>
-                                <FormControlLabel value="teacher" control={<Radio />} label="Teacher" />
-                                <FormControlLabel value="student" control={<Radio />} label="Student" />
+                                <FormControlLabel value="teacher" name="teacher" control={<Radio />} label="Teacher" />
+                                <FormControlLabel value="student" name="student" control={<Radio />} label="Student" />
 
                             </RadioGroup>
                         </FormControl>

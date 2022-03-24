@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import Main from './Components/Main/Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Search from './Components/Search/Search';
 import {
   BrowserRouter as Router,
@@ -10,13 +9,10 @@ import {
   Route,
 
 } from "react-router-dom";
-
-import Register from './Components/Register/Register';
-
-
+import Register from './Components/Login/Register/Register';
 import Post from './Components/Post/Post';
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
-import AuthProvider from './Components/FirebaseConfig/AuthProvider';
+import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
+import AuthProvider from './Components/Login/FirebaseConfig/AuthProvider';
 import Login from './Components/Login/Login';
 import AllRes from './Components/UsefullinfoDetails/AllRes';
 import Qus1 from './Components/UsefullinfoDetails/Qus1';

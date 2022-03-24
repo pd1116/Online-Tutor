@@ -3,7 +3,7 @@ import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import AddIcCallOutlinedIcon from '@mui/icons-material/AddIcCallOutlined';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
-import useAuth from '../FirebaseConfig/useAuth';
+import useAuth from '../Login/FirebaseConfig/useAuth';
 import './Header.css'
 // import tutor from '../../images/Online Tutor.png'
 const Header = () => {

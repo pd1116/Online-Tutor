@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-
 import Header from '../../../Components/Header/Header';
-
 import './StudentProfile.css';
 import { Link } from 'react-router-dom';
-
 import { Card } from 'react-bootstrap';
-import useAuth from '../../../Components/FirebaseConfig/useAuth';
-
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 import Footer from '../../../Components/Footer/Footer';
 import StudentNavbar from '../StudentNavbar/StudentNavbar';
 import StudentSetting from '../StudentSetting/StudemtSetting';
