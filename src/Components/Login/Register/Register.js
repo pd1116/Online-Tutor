@@ -39,14 +39,14 @@ const Register = () => {
             return
         }
         registerUser(loginData.email, loginData.password)
-      console.log(loginData);
+        console.log(loginData);
         e.preventDefault();
     }
     return (
 
 
         <div className="register">
-           <Navbars></Navbars>
+            <Navbars></Navbars>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
                     <Typography variant="body1" gutterBottom>Register</Typography>
@@ -83,35 +83,21 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             variant="standard" />
 
-                        <FormControl>
-
-                            <RadioGroup
-                             onBlur={handleOnBlur}
-                                row
-                                aria-labelledby="demo-row-radio-buttons-group-label"
-                                name="Gender">
-                                <FormLabel id="demo-row-radio-buttons-group-label " sx={{ width: '20%', m: 2 }} >Gender</FormLabel>
-                                <FormControlLabel value="female"   name="female" control={<Radio />} label="Female" />
-                                <FormControlLabel value="male"   name="male"  control={<Radio />} label="Male" />
-
-                            </RadioGroup>
-                        </FormControl>
-                                
-                                <br />
-
-                        <FormControl>
-
-                            <RadioGroup
-                            onBlur={handleOnBlur}
-                                row
-                                aria-labelledby="demo-row-radio-buttons-group-label"
-                                name="role">
-                                <FormLabel id="demo-row-radio-buttons-group-label " sx={{ m: 2 }} >Log in As a </FormLabel>
-                                <FormControlLabel value="teacher" name="teacher" control={<Radio />} label="Teacher" />
-                                <FormControlLabel value="student" name="student" control={<Radio />} label="Student" />
-
-                            </RadioGroup>
-                        </FormControl>
+                    
+                        <div className="Gender pt-2">
+                            <div  onBlur={handleOnBlur}>
+                                <label className="mx-2" >Gender</label>
+                                <input className="mx-1" type="radio" value="Male" name="gender" /> Male
+                                <input className="mx-1" type="radio" value="Female" name="gender" /> Female
+                            </div>
+                        </div>
+                        <div className="Role py-2">
+                            <div  onBlur={handleOnBlur}>
+                                <label className="mx-2" >Log in As a</label>
+                                <input className="mx-1" type="radio" value="Teacher" name="role" /> Teacher
+                                <input className="mx-1" type="radio" value="Student" name="role" /> Student
+                            </div>
+                        </div>
 
 
 
