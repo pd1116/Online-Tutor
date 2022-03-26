@@ -1,11 +1,9 @@
-import { Typography, TextField, Button, CircularProgress, Alert, FormLabel, FormControl } from '@mui/material';
+import { Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
 import { NavLink, } from 'react-router-dom';
 
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
+
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth'
 
 import register from '../../../images/register.webp'
@@ -26,7 +24,7 @@ const Register = () => {
 
 
     const handleOnBlur = e => {
-        console.log(e);
+        // console.log(e);
         const field = e.target.name;
         const value = e.target.value;
         const newLoginData = { ...loginData };
@@ -38,8 +36,37 @@ const Register = () => {
             alert('Your password did not match');
             return
         }
-        registerUser(loginData.email, loginData.password)
+        registerUser(loginData.email, loginData.password,loginData.name)
+     
         console.log(loginData);
+        if (loginData.role === 'Student') {
+           
+            fetch('http://localhost:4000/StudentData', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData)
+            })
+                .then(res => res.json())
+                .then(data => console.log("my std data",data))
+                .catch(err => console.log(err))
+
+        }
+        else {
+           
+            fetch('http://localhost:4000/TeacherData', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if(data){ 
+                        alert("ok calm");
+                    }
+                })
+                .catch(err => console.log(err))
+        }
+
         e.preventDefault();
     }
     return (
@@ -83,16 +110,16 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             variant="standard" />
 
-                    
+
                         <div className="Gender pt-2">
-                            <div  onBlur={handleOnBlur}>
+                            <div onBlur={handleOnBlur}>
                                 <label className="mx-2" >Gender</label>
                                 <input className="mx-1" type="radio" value="Male" name="gender" /> Male
                                 <input className="mx-1" type="radio" value="Female" name="gender" /> Female
                             </div>
                         </div>
                         <div className="Role py-2">
-                            <div  onBlur={handleOnBlur}>
+                            <div onBlur={handleOnBlur}>
                                 <label className="mx-2" >Log in As a</label>
                                 <input className="mx-1" type="radio" value="Teacher" name="role" /> Teacher
                                 <input className="mx-1" type="radio" value="Student" name="role" /> Student
