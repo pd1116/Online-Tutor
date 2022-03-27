@@ -8,11 +8,21 @@ import Footer from '../../../Components/Footer/Footer';
 import StudentNavbar from '../StudentNavbar/StudentNavbar';
 import StudentSetting from '../StudentSetting/StudemtSetting';
 import StudentUpdate from '../StudentUpdate/StudentUpdate';
+import { useEffect } from 'react';
 const StudentProfile= () => {
     const { user, logout } = useAuth();
-    console.log("My user:,", user);
-  
-
+    const [userData, setUserData] = useState([]);
+    console.log(user.email);
+    console.log(userData);
+    useEffect(() => {
+        fetch('http://localhost:4000/role', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: user.email })
+        })
+            .then(res => res.json())
+            .then(data => setUserData(data));
+    }, [userData])
     // modal setup
     const [modalIsOpen, setIsOpen] = useState(false);
     const [modalIsOpen2, setIsOpen2] = useState(false);
@@ -60,11 +70,13 @@ const StudentProfile= () => {
                                 <Card.Body>
                                     <Card.Title><p><b>Account Type: </b></p></Card.Title>
                                     <Card.Text className="card_text">
-                                        <p><b> Name: </b> {user.displayName}</p>
-                                        <p><b> Email:  </b>{user.email}</p>
-                                        <p><b> Phone: </b>{ }</p>
-                                        <p><b> Gender: </b>{ }</p>
-                                        <p><b> Institute: </b>{ }</p>
+                                       
+                                     
+                                        <p><b> Name: </b> {userData[0]?.name}</p>
+                                        <p><b> Email:  </b>{userData[0]?.mail}</p>
+                                        <p><b> Phone: </b>{userData[0]?.institute}</p>
+                                        <p><b> Gender: </b>{userData[0]?.gender}</p>
+                                        <p><b> Institute: </b>{userData[0]?.phone}</p>
                                         <p><b> Location: </b>{ }</p>
 
 

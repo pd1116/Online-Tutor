@@ -5,6 +5,8 @@ import {  Button} from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import swal from 'sweetalert';
 import './Post.css'
+import  { useState } from 'react';
+import useAuth from '../Login/FirebaseConfig/useAuth';
 
 const Post = () => {
     const popUp = () => {
@@ -15,6 +17,11 @@ const Post = () => {
             button: "OK",
         });
     }
+
+ 
+const [loginData, setLoginData] = useState({});
+
+    const { user, registerUser, Loading, authError } = useAuth();
     return (
         <div className="">
             <Navbars></Navbars>

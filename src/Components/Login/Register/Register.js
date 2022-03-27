@@ -36,23 +36,23 @@ const Register = () => {
             alert('Your password did not match');
             return
         }
-        registerUser(loginData.email, loginData.password,loginData.name)
-     
+        registerUser(loginData.email, loginData.password, loginData.name)
+
         console.log(loginData);
         if (loginData.role === 'Student') {
-           
+
             fetch('http://localhost:4000/Clients', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData)
             })
                 .then(res => res.json())
-                .then(data => console.log("my std data",data))
+                .then(data => console.log("my std data", data))
                 .catch(err => console.log(err))
 
         }
         else {
-           
+
             fetch('http://localhost:4000/Clients', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -60,7 +60,7 @@ const Register = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if(data){ 
+                    if (data) {
                         alert("ok calm");
                     }
                 })
@@ -107,6 +107,20 @@ const Register = () => {
                             label="ReType Your Password"
                             type="password"
                             name="password2"
+                            onBlur={handleOnBlur}
+                            variant="standard" />
+                        <TextField
+                            sx={{ width: '75%', m: 1 }}
+                            id="standard-basic"
+                            label="Your Phone Number"
+                            name="phone"
+                            onBlur={handleOnBlur}
+                            variant="standard" />
+                        <TextField
+                            sx={{ width: '75%', m: 1 }}
+                            id="standard-basic"
+                            label="Your Institute"
+                            name="institute"
                             onBlur={handleOnBlur}
                             variant="standard" />
 

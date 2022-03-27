@@ -10,7 +10,7 @@ import {
 
 } from "react-router-dom";
 import Register from './Components/Login/Register/Register';
-import Post from './Components/Post/Post';
+
 import PrivateRoute from './Components/Login/PrivateRoute/PrivateRoute';
 import AuthProvider from './Components/Login/FirebaseConfig/AuthProvider';
 import Login from './Components/Login/Login';
@@ -30,10 +30,11 @@ import TeacherProfile from './Pages/Teacher/TeacherProfile/TeacherProfile';
 import Notification from './Pages/Teacher/Notification/Notification';
 import Newsfeed from './Pages/Teacher/Newsfeed/Newsfeed';
 import TeacherMain from './Pages/Teacher/TeacherMain/TeacherMain';
-import Posts from './Components/Post/Posts';
+
 import StudentMain from './Pages/Student/StudentMain/StudentMain';
 import StudentProfile from './Pages/Student/StudentProfile/StudentProfile';
-import useAuth from './Components/Login/FirebaseConfig/useAuth';
+
+import PostForm from './Pages/Student/PostForm/PostForm';
 
 function App() {
   // const {user } = useAuth();
@@ -65,13 +66,10 @@ function App() {
               <Register></Register>
             </Route>
 
-            <PrivateRoute path="/post">
-              <Post></Post>
+            <PrivateRoute path="/postform">
+             <PostForm></PostForm>
             </PrivateRoute>
 
-            <PrivateRoute path="/posts">
-              <Posts></Posts>
-            </PrivateRoute>
             <Route path="/contact">
               <Contact></Contact>
             </Route>

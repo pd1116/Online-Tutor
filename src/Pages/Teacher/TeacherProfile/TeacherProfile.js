@@ -12,7 +12,6 @@ import TeacherUpdate from '../TeacherUpdate/TeacherUpdate';
 import Footer from '../../../Components/Footer/Footer';
 import { useEffect } from 'react';
 const TeacherProfile = () => {
-
     const { user, logout } = useAuth();
     const [userData, setUserData] = useState([]);
     console.log(user.email);
@@ -25,22 +24,12 @@ const TeacherProfile = () => {
         })
             .then(res => res.json())
             .then(data => setUserData(data));
-    }, [])
-
+    }, [userData])
+   
    
     
     
-//    console.log(user.email);
 
-    useEffect(() => {
-        fetch('http://localhost:4000/role',{
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ email: user.email })
-        })
-            .then(res => res.json())
-            .then(data => console.log(" role of user:",data));
-    }, [])
    
     // modal setup
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -89,13 +78,11 @@ const TeacherProfile = () => {
                                 <Card.Body>
                                     <Card.Title><p><b>Account Type: </b></p></Card.Title>
                                     <Card.Text className="card_text">
-                                        <p><b> Name: </b> {userData[0].name}</p>
-                                        <p><b> Email:  </b>{userData[0].mail}</p>
-                                        <p><b> Phone: </b>{userData[0].name}</p>
-                                        <p><b> Gender: </b>{userData[0].gender}</p>
-                                        <p><b> Institute: </b>{ }</p>
-
-
+                                        <p><b> Name: </b> {userData[0]?.name}</p>
+                                        <p><b> Email:  </b>{userData[0]?.mail}</p>
+                                        <p><b> Phone: </b>{userData[0]?.institute}</p>
+                                        <p><b> Gender: </b>{userData[0]?.gender}</p>
+                                        <p><b> Institute: </b>{userData[0]?.phone}</p>
 
 
                                     </Card.Text>

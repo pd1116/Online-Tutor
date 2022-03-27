@@ -21,7 +21,7 @@ const StudentNavbar = () => {
 
                         {/* <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/newsfeed">Newsfeed</NavLink> */}
                         <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/studentnotification">Notification</NavLink>
-
+                        <NavLink className=" p-4 " style={{ textDecoration: 'none' }} to="/postform">Posts</NavLink>
 
                     </Nav>
 
