@@ -5,7 +5,9 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 
 import LogoutIcon from '@mui/icons-material/Logout';
-const TeacherNavbar = () => {
+const TeacherNavbar = ( ) => {
+
+     
     const { user, logout } = useAuth();
     return (
         <div className="">
@@ -22,7 +24,7 @@ const TeacherNavbar = () => {
                         {/* <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/newsfeed">Newsfeed</NavLink> */}
                         <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/tnotification">Notification</NavLink>
 
-
+ 
                     </Nav>
 
 

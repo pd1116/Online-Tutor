@@ -1,7 +1,7 @@
 import React from 'react';
 import './Newsfeed.css';
 import { Card } from 'react-bootstrap';
-const Newsfeed = () => {
+const Newsfeed = (clients) => {
     return (
         <div>
 
@@ -13,7 +13,7 @@ const Newsfeed = () => {
                         <Card.Body>
                            
                             <Card.Text className="card_text">
-                                <p><b> Name: </b> { }</p>
+                                <p><b> Name: </b> {clients.name }</p>
                                 <p><b> Subject:  </b>{ }</p>
                                 <p><b> Class: </b>{ }</p>
                                 <p><b> Medium: </b>{ }</p>

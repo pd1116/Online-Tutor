@@ -33,16 +33,20 @@ import TeacherMain from './Pages/Teacher/TeacherMain/TeacherMain';
 import Posts from './Components/Post/Posts';
 import StudentMain from './Pages/Student/StudentMain/StudentMain';
 import StudentProfile from './Pages/Student/StudentProfile/StudentProfile';
+import useAuth from './Components/Login/FirebaseConfig/useAuth';
 
 function App() {
-
+  // const {user } = useAuth();
 
   return (
     <div className="App">
+      
 
       <AuthProvider>
-     
+      
+      {/* <p>user: {user.email} </p>  */}
         <Router>
+        
           <Switch>
             <Route exact path="/">
               <Main></Main>

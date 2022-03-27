@@ -41,7 +41,7 @@ const Register = () => {
         console.log(loginData);
         if (loginData.role === 'Student') {
            
-            fetch('http://localhost:4000/StudentData', {
+            fetch('http://localhost:4000/Clients', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData)
@@ -53,7 +53,7 @@ const Register = () => {
         }
         else {
            
-            fetch('http://localhost:4000/TeacherData', {
+            fetch('http://localhost:4000/Clients', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData)

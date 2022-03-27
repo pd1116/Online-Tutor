@@ -7,7 +7,7 @@ import useAuth from '../Login/FirebaseConfig/useAuth';
 import './Header.css'
 // import tutor from '../../images/Online Tutor.png'
 const Header = () => {
-    const { user, logout } = useAuth();
+    // const { user, logout } = useAuth();
     return (
         <div className=" bg-white header  ">
 
@@ -22,14 +22,14 @@ const Header = () => {
                 <div class=" col-md-8  ">
 
                     <h4 class=" text-center pt-2 " ><span class="header_icon"><AddIcCallOutlinedIcon sx={{ fontSize: 35, mr: 1 }}></AddIcCallOutlinedIcon></span> 01303001354  
-                    {
+                    {/* {
                         user?.email ?
                             <Link to="/login" onClick={logout} class="login_btn  text-dark mx-5"><span class="header_icon"><LogoutIcon sx={{ fontSize: 30, mr: 1 }}></LogoutIcon></span>LogOut {user.displayName}</Link>
 
                             :
                            
                             <Link to="/login" class="login_btn  text-dark mx-5"><span class="header_icon"><LoginRoundedIcon sx={{ fontSize: 30, mr: 1 }}></LoginRoundedIcon></span>Login</Link>
-                    }
+                    } */}
                     </h4>
 
 
