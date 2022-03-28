@@ -1,8 +1,23 @@
-import React from 'react';
-import './Newsfeed.css';
+import React, { useEffect, useState } from 'react';
+import './TeacherNewsfeed.css'
 import { Card } from 'react-bootstrap';
-const Newsfeed = ({postinfo}) => {
-    console.log(postinfo);
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
+
+
+
+
+
+const TeacherNewsfeed = ({postinfo}) => {
+    const { user, logout } = useAuth();
+
+    const [notifications,setNotifications] = useState(false);
+
+
+  const hendleApply=()=>{
+    // console.log(userData[0].name);
+    console.log(user.email);
+
+  }
     return (
         <div>
 
@@ -14,7 +29,7 @@ const Newsfeed = ({postinfo}) => {
                         <Card.Body>
                            
                             <Card.Text className="card_text">
-                                <p><b> Name: </b> {postinfo.name }</p>
+                            <p><b> Name: </b> {postinfo.name }</p>
                                 <p><b> Subject:  </b>{postinfo.subject}</p>
                                 <p><b> Class: </b>{postinfo.className}</p>
                                 <p><b> Medium: </b>{ postinfo.medium}</p>
@@ -27,7 +42,7 @@ const Newsfeed = ({postinfo}) => {
 
 
                             </Card.Text>
-                            <button className='btn btn-success w-50'>apply</button>
+                            <button className='btn btn-success w-50' onClick={hendleApply}>apply</button>
 
                           
 
@@ -42,4 +57,4 @@ const Newsfeed = ({postinfo}) => {
     );
 };
 
-export default Newsfeed;
+export default TeacherNewsfeed ;

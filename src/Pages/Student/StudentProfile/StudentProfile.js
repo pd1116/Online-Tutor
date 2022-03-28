@@ -68,16 +68,16 @@ const StudentProfile= () => {
                                 <img className="teacherimg mx-auto d-block" variant="top" src={user.photoURL} alt="" />
 
                                 <Card.Body>
-                                    <Card.Title><p><b>Account Type: </b></p></Card.Title>
+                                    <Card.Title><p><b>Account Type: </b>{userData[0]?.role}</p></Card.Title>
                                     <Card.Text className="card_text">
                                        
                                      
                                         <p><b> Name: </b> {userData[0]?.name}</p>
                                         <p><b> Email:  </b>{userData[0]?.mail}</p>
-                                        <p><b> Phone: </b>{userData[0]?.institute}</p>
+                                        <p><b> Phone: </b>{userData[0]?.phone}</p>
                                         <p><b> Gender: </b>{userData[0]?.gender}</p>
-                                        <p><b> Institute: </b>{userData[0]?.phone}</p>
-                                        <p><b> Location: </b>{ }</p>
+                                        <p><b> Institute: </b>{userData[0]?.institute}</p>
+                                        {/* <p><b> Location: </b>{ }</p> */}
 
 
 

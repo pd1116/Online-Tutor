@@ -4,7 +4,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 
-import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const TeacherNavbar = ( ) => {
 
      
@@ -22,7 +22,7 @@ const TeacherNavbar = ( ) => {
                         <NavLink className="p-4  " style={{ textDecoration: 'none' }} to="/teachermain">Home</NavLink>
 
                         {/* <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/newsfeed">Newsfeed</NavLink> */}
-                        <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/tnotification">Notification</NavLink>
+                        <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/teachernotification">Notification</NavLink>
 
  
                     </Nav>
@@ -30,7 +30,7 @@ const TeacherNavbar = ( ) => {
 
                     {
                         user?.email &&
-                        <NavLink to="/teacherprofile" class="login_btn  text-white d-flex align-items-center"><span class="header_icon"><LogoutIcon sx={{ fontSize: 30, mr: 2 }}></LogoutIcon></span>Profile</NavLink>
+                        <NavLink to="/teacherprofile" class="login_btn  text-white d-flex align-items-center"><span class="nav_icon"><AccountCircleIcon sx={{ fontSize: 30, mr: 2 }}></AccountCircleIcon></span>Profile</NavLink>
 
 
                     }

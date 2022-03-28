@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../../Components/Header/Header';
-import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
-import Newsfeed from '../Newsfeed/Newsfeed';
 
 import TeacherNavbar from '../TeacherNavbar/TeacherNavbar';
+import TeacherNewsfeed from '../TeacherNewsfeed/TeacherNewsfeed';
 
 
 const TeacherMain = () => {
+    const [postinfo, setPostinfo] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:4000/postinfo')
+            .then(res => res.json())
+            .then(data => setPostinfo(data))
+        // .then(data => console.log(data))
+    }, [])
     
    
     return (
         <div>
             <Header></Header>
            <TeacherNavbar  ></TeacherNavbar>
-           <Newsfeed  ></Newsfeed>
-           {/* <p>{userData[0].name}</p> */}
+           <div className="post_info  row p-3 m-3"></div>
+            {
+
+                postinfo.map(postinfo => <TeacherNewsfeed postinfo={postinfo} key={postinfo._id}></TeacherNewsfeed>)
+
+            }
            
          
 

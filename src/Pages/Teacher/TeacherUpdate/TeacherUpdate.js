@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
-import { Button, Grid, TextField, Typography } from '@mui/material';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import './TeacherUpdate.css';
+import { Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
 
+import './TeacherUpdate.css';
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
+import post from '../../../images/post.png';
 const customStyles = {
     content: {
         top: '50%',
@@ -18,29 +17,48 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
-    const teacherUpdate = e => {
+    const [loginData, setLoginData] = useState({});
+
+    const { user, registerUser, Loading, authError } = useAuth();
+
+
+    const handleOnBlur = e => {
+        
         const field = e.target.name;
         const value = e.target.value;
-        console.log(value);
-
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
     }
-    const TeacherUpdateSubmit = e => {
-        const value = e.target.value;
-        console.log(value);
 
-        e.prevent();
+    const handleLoginSubmit = e => {
+        console.log("my update",loginData);
+        
+        registerUser(loginData.email, loginData.password, loginData.name)
+        fetch('http://localhost:4000/UpdateTutor', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(loginData)
+        })
+            .then(res => res.json())
+
+            .then(data => setLoginData(data))
+            .catch(err => console.log(err))
+
+
+        e.preventDefault();
     }
 
 
     return (
         <div >
 
-            <Modal 
-           
+            <Modal
+
                 isOpen={modalIsOpen2}
 
                 onRequestClose={closeModal2}
-               
+                style={customStyles}
                 contentLabel="Example Modal"
             >
                 <div className="row ">
@@ -53,166 +71,100 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
                         <button type="button" className=" btn btn-outline-danger " onClick={closeModal2}>x</button>
                     </div>
                 </div>
-                <Grid  container  spacing={2}>
+                <Grid container spacing={2}>
+                    <Grid item sx={{ mt: 3 }} xs={12} md={6}>
+                      
+                        {!Loading && <form onSubmit={handleLoginSubmit}>
 
-                    <Grid item sx={{ mt: 2 }} xs={12} md={12}>
-
-                        <form  nSubmit={TeacherUpdateSubmit}>
-                            <div className="row   ">
-                                <div className="col-12 w-70" >
-
-
-                                    <div className="row mb-3">
-                                        <div className="col-md-3">
-                                            <h5>Medium</h5>
-
-                                        </div>
-                                        <div className="col-md-3">
-                                            <FormGroup>
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Bangla" />
-                                            </FormGroup>
+                            <TextField
+                                sx={{ width: '75%', m: 1 }}
+                                id="standard-basic"
+                                label="Your Location"
+                                name="location"
+                                onBlur={handleOnBlur}
+                                variant="standard" />
 
 
-                                        </div>
-                                        <div className="col-md-3">
-                                            <FormGroup>
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" English" />
-                                            </FormGroup>
-
-
-                                        </div>
-                                    </div>
-                                    {/* subject  */}
-                                    <div className="row mb-3">
-                                        <div className="col-md-3">
-                                            <h5>Subjects</h5>
-
-                                        </div>
-                                        <div className="col-md-3">
-                                            <FormGroup>
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Bangla" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Math" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" General Science" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" ICT" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Chemistry" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Biology" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Echonomics" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" ComputerScience" />
-
-                                            </FormGroup>
-
-                                        </div>
-                                        <div className="col-md-3">
-                                            <FormGroup>
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" English" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Math" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Social Science" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Religion" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Physics" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Higher Math" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Accounting" />
-                                                <FormControlLabel className="mx-2 " control={<Checkbox Checked />} label=" Finance" />
-                                            </FormGroup>
-
-                                        </div>
-
-
-
-                                    </div>
-
-                                    {/* class */}
-
-                                    <div className="row ">
-                                        <div className="col-md-3">
-                                            <h5>Class</h5>
-
-                                        </div>
-                                        <div className="col-md-3">
-                                            <FormGroup>
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" One-Three" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" SIx - Seven" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label="Nine -Ten" />
-                                            </FormGroup>
-
-
-                                        </div>
-                                        <div className="col-md-3">
-                                            <FormGroup>
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label="Four - Five" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Eight" />
-                                                <FormControlLabel className="mx-2" control={<Checkbox Checked />} label=" Eleven-twelve" />
-                                            </FormGroup>
-
-
-                                        </div>
-                                    </div>
-                                    {/* salary  */}
-                                    <div className="row  pt-3 ">
-                                        <div className="col-md-3">
-
-                                            <div class="form-check">
-                                                <h5>Salary Range</h5>
-
-                                            </div>
-                                        </div>
-                                        <div className="col-md-3">
-                                            <div class="form-check ">
-                                                <select class="form-control" aria-label=" select example">
-                                                    <option selected>None</option>
-                                                    <option value="1">1000-2000</option>
-                                                    <option value="2">2000-5000</option>
-                                                    <option value="3">5000-10000</option>
-                                                    <option value="3">10000-15000</option>
-
-
-                                                </select>
-
-                                            </div>
-
-
-                                        </div>
-
-
-                                    </div>
-                                    {/* //location */}
-                                    <div className="row  pt-3 pb-3">
-                                        <div className="col-md-3">
-
-                                            <div class="form-check">
-                                                <h3 className="pt-">Location</h3>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-3">
-                                            <div class="form-check">
-
-                                                <div class="">
-                                                    <input type="location" id="location" placeholder="e.g: Mirpur 2, Dhaka" className="form-control" />
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-
-                                    </div>
-
-                                        <button className="btn btn-success d-flex mx-auto mb-2   " sx={{ width: '70%', my: 1 }} type="submit" >Update Information </button>
-
-                               
-
+                            <div className="Medium pt-2">
+                                <div onBlur={handleOnBlur}>
+                                    <label className="mx-2" >Medium</label>
+                                    <input className="mx-1" type="radio" value="Bangla" name="medium" /> Bangla
+                                    <input className="mx-1" type="radio" value="English" name="medium" /> English
                                 </div>
+                            </div>
+
+                            <div className="row">
+                            <div class="form-group w-75 mx-auto p-2 col " onBlur={handleOnBlur}>
+                                <label className="mx-2" >Select salary</label>
+                                <select class="form-control p-3" name="salary" aria-label="Default select example">
+
+                                    <option value="Not set" disabled={true}>Select salary</option>
+                                    <option value="1000-2000">1000-2000</option>
+                                    <option value="2000-5000">2000-5000</option>
+                                    <option value="5000-10000">5000-10000</option>
+                                    <option value="10000-15000">10000-15000</option>
+                                </select>
+
+                            </div>
+                                <div class="form-group w-50 p-2 col " onBlur={handleOnBlur}>
+                                <label className="mx-2 " >Class</label>
+                                <select class="form-control p-3 " name="class" aria-label="Default select example">
+
+                                    <option value="Not set" disabled={true}>Select Class</option>
+                                    <option value="One-Three">One-Three</option>
+                                    <option value="Four-Five">Four-Five</option>
+                                    <option value="Six-Eight">Six-Eight</option>
+                                    <option value="Nine-Ten">Nine-Ten</option>
+                                    <option value="Eleven-Twelve">Eleven-Twelve</option>
+                                </select>
+
+                            </div>
+                            </div>
+
+                            
+                           
+                            <div class="form-group w-75  p-2 " onBlur={handleOnBlur}>
+                                <label className="mx-2" >Select Subject</label>
+                                <select class="form-control p-3" name="subject" aria-label="Default select example">
+
+                                    <option value="Not set" disabled={true}>Select Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="English">English</option>
+                                    <option value="Math">Math</option>
+                                    <option value="General Science"> General Science</option>
+                                    <option value="ICT"> ICT</option>
+                                    <option value="Chemistry">Chemistry</option>
+                                    <option value="Biology">Biology</option>
+                                    <option value="Math">Physics</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Social Science">Social Science</option>
+                                    <option value="Religion">Religion</option>
+                                    <option value="Higher Math">Higher Math</option>
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="Finance">Finance</option>
+
+
+                                </select>
 
                             </div>
 
 
 
-                        </form>
+                            <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Update</Button>
+
+                        </form>}
+                        {
+                            Loading && <CircularProgress />
+                        }
+
+
 
 
                     </Grid>
-
+                    <Grid item xs={12} md={6}>
+                        <img style={{ width: '100%',paddingTop:"30px" }} src={post} alt="" />
+                    </Grid>
                 </Grid>
-
 
 
 
@@ -223,4 +175,4 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
     );
 };
 
-export  default TeacherUpdate;
+export default TeacherUpdate;

@@ -27,14 +27,17 @@ import Qus9 from './Components/UsefullinfoDetails/Qus9';
 import Contact from './Components/Contact/Contact';
 import OurTutorInfo from './Components/OurTutor/OurTutorInfo';
 import TeacherProfile from './Pages/Teacher/TeacherProfile/TeacherProfile';
-import Notification from './Pages/Teacher/Notification/Notification';
-import Newsfeed from './Pages/Teacher/Newsfeed/Newsfeed';
+
 import TeacherMain from './Pages/Teacher/TeacherMain/TeacherMain';
 
 import StudentMain from './Pages/Student/StudentMain/StudentMain';
 import StudentProfile from './Pages/Student/StudentProfile/StudentProfile';
 
 import PostForm from './Pages/Student/PostForm/PostForm';
+import TeacherNewsfeed from './Pages/Teacher/TeacherNewsfeed/TeacherNewsfeed';
+import TeacherNotification from './Pages/Teacher/TeacherNotification/TeacherNotification';
+import Notification from './Pages/Student/Notification/Notification';
+import Newsfeed from './Pages/Student/Newsfeed/Newsfeed';
 
 function App() {
   // const {user } = useAuth();
@@ -121,11 +124,11 @@ function App() {
             <Route path="/teacherprofile">
              <TeacherProfile></TeacherProfile>
             </Route>
-            <Route path="/tnotification">
-             <Notification></Notification>
+            <Route path="/teachernotification">
+             <TeacherNotification></TeacherNotification>
             </Route>
-            <Route path="/tnewsfeed">
-            <Newsfeed></Newsfeed>
+            <Route path="/techernewsfeed">
+            <TeacherNewsfeed></TeacherNewsfeed>
             </Route>
 
 

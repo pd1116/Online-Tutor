@@ -1,30 +1,23 @@
+import { Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
 import React, { useState } from 'react';
-import { Button, Grid, TextField, Typography } from '@mui/material';
-import swal from 'sweetalert';
-import Header from '../../../Components/Header/Header';
+import { Grid } from '@mui/material';
+import { NavLink, } from 'react-router-dom';
+
+
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth'
+
+import post from '../../../images/post.png'
+
 import StudentNavbar from '../StudentNavbar/StudentNavbar';
-import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
-import Footer from '../../../Components/Footer/Footer';
-
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
 
 
-const popUp = () => {
-    swal({
-        title: "Thanks for Your Informatino!",
-        text: "You have successfully posted.",
-        icon: "success",
-        button: "OK",
-    });
-}
 
 
-const PostForm = () => {
+const  PostForm = () => {
+
+
+
     const [loginData, setLoginData] = useState({});
 
     const { user, registerUser, Loading, authError } = useAuth();
@@ -38,16 +31,17 @@ const PostForm = () => {
         newLoginData[field] = value;
         setLoginData(newLoginData);
     }
-
+   
     const handleLoginSubmit = e => {
         console.log("mydata",loginData);
+        registerUser(loginData.email, loginData.password, loginData.name)
            fetch('http://localhost:4000/PostForm', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData)
             })
                 .then(res => res.json())
-                // .then(data => console.log("my std data", data))
+                
                 .then(data => setLoginData( data))
                 .catch(err => console.log(err))
 
@@ -55,14 +49,15 @@ const PostForm = () => {
         e.preventDefault();
     }
     return (
-        <div>
-            <Header></Header>
-            <StudentNavbar></StudentNavbar>
+
+
+        <div className="register">
+             <StudentNavbar></StudentNavbar>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
-                    <Typography variant="body1" gutterBottom>Post Form</Typography>
+                <Typography variant="body1" gutterBottom>Post Form</Typography>
                     {!Loading && <form onSubmit={handleLoginSubmit}>
-                        <TextField
+                    <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
                             label="Your Name"
@@ -111,6 +106,19 @@ const PostForm = () => {
 
 
                         <div class="form-group w-75 mx-auto p-2 " onBlur={handleOnBlur}>
+                            <label className="mx-2" >Class</label>
+                            <select class="form-control p-3" name="class" aria-label="Default select example">
+                               
+                                <option value="Not set" disabled={true}>Select Class</option>
+                                <option value="One-Three">One-Three</option>
+                                <option value="Four-Five">Four-Five</option>
+                                <option value="Six-Eight">Six-Eight</option>
+                                <option value="Nine-Ten">Nine-Ten</option>
+                                <option value="Eleven-Twelve">Eleven-Twelve</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group w-75 mx-auto p-2 " onBlur={handleOnBlur}>
                             <label className="mx-2" >Select salary</label>
                             <select class="form-control p-3" name="salary" aria-label="Default select example">
                                
@@ -122,41 +130,50 @@ const PostForm = () => {
                             </select>
 
                         </div>
-                        {/* <Box onBlur={handleOnBlur} className="mx-auto" sx={{ width: '75%', m: 1 }}>
-                            <FormControl fullWidth>
+                        <div class="form-group w-75 mx-auto p-2 " onBlur={handleOnBlur}>
+                            <label className="mx-2" >Select Subject</label>
+                            <select class="form-control p-3" name="subject" aria-label="Default select example">
+                               
+                                <option value="Not set" disabled={true}>Select Subject</option>
+                                <option value="Bangla">Bangla</option>
+                                <option value="English">English</option>
+                                <option value="Math">Math</option>
+                                <option value="General Science"> General Science</option>
+                                <option value="ICT"> ICT</option>
+                                <option value="Chemistry">Chemistry</option>
+                                <option value="Biology">Biology</option>
+                                <option value="Math">Physics</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Social Science">Social Science</option>
+                                <option value="Religion">Religion</option>
+                                <option value="Higher Math">Higher Math</option>
+                                <option value="Accounting">Accounting</option>
+                                <option value="Finance">Finance</option>
+                               
+                               
+                            </select>
 
-                                <InputLabel  >Select Class</InputLabel>
-                                <Select
-
-                                    id="demo-simple-select"
-                                    name="class"
-                                    label="Class"
-
-                                >
-                                    <MenuItem value="One-Three">One-Three</MenuItem>
-                                    <MenuItem value="Four-Five">Four-Five</MenuItem>
-                                    <MenuItem value="Six-Eight">Six-Eight</MenuItem>
-                                    <MenuItem value="Nine-Ten">Nine-Ten</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Box> */}
+                        </div>
 
 
 
-
-                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Post your From</Button>
-
+                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Post Your Form</Button>
+                        
                     </form>}
+                    {
+                        Loading && <CircularProgress />
+                    }
 
+
+                    
 
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src="{register} " alt="" />
+                    <img style={{ width: '100%' }} src={post} alt="" />
                 </Grid>
             </Grid>
-            <Footer></Footer>
-
         </div>
+
     );
 };
 

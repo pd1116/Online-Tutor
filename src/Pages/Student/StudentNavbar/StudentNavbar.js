@@ -3,8 +3,8 @@ import { Nav, Navbar } from 'react-bootstrap';
 
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-import LogoutIcon from '@mui/icons-material/Logout';
 const StudentNavbar = () => {
     const { user, logout } = useAuth();
     return (
@@ -28,7 +28,7 @@ const StudentNavbar = () => {
 
                     {
                         user?.email &&
-                        <NavLink to="/studentprofile" class="login_btn  text-white d-flex align-items-center"><span class="header_icon"><LogoutIcon sx={{ fontSize: 30, mr: 2 }}></LogoutIcon></span>studentProfile</NavLink>
+                        <NavLink to="/studentprofile" class="login_btn  text-white d-flex align-items-center"><span class="nav_icon"><AccountCircleIcon sx={{ fontSize: 30, mr: 2 }}></AccountCircleIcon></span>studentProfile</NavLink>
 
 
                     }

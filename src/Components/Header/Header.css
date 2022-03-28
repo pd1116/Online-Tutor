@@ -5,7 +5,7 @@
     font-size: 18px;
     padding: 8px;
     color: black;
-    transition: 1s ease;
+    transition: .5s ease;
 }
 
 .login_btn:hover{

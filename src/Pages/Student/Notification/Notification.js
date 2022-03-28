@@ -2,13 +2,14 @@ import React from 'react';
 
 
 import Header from '../../../Components/Header/Header';
-import TeacherNavbar from '../TeacherNavbar/TeacherNavbar';
+import StudentNavbar from '../StudentNavbar/StudentNavbar';
+
 const Notification = () => {
     return (
         <div>
 
             <Header></Header>
-            <TeacherNavbar></TeacherNavbar>
+            <StudentNavbar></StudentNavbar>
             <h1>This is Notification</h1>
         </div>
     );

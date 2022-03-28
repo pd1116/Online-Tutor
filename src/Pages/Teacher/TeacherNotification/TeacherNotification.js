@@ -3,7 +3,8 @@ import React from 'react';
 
 import Header from '../../../Components/Header/Header';
 import TeacherNavbar from '../TeacherNavbar/TeacherNavbar';
-const Notification = () => {
+const TeacherNotification = () => {
+    
     return (
         <div>
 
@@ -14,4 +15,4 @@ const Notification = () => {
     );
 };
 
-export default Notification;
+export default TeacherNotification;
