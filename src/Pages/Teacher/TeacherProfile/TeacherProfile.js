@@ -36,7 +36,7 @@ const TeacherProfile = () => {
             .then(res => res.json())
             .then(data => setUserUpdate(data))
         
-    }, [])
+    }, [userData])
    
    
     

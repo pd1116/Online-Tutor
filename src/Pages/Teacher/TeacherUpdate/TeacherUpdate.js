@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
 
@@ -18,33 +18,56 @@ const customStyles = {
 Modal.setAppElement('#root');
 const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
     const [loginData, setLoginData] = useState({});
-
+    const [isUser, setIsUser] = useState(false);
     const { user, registerUser, Loading, authError } = useAuth();
-
-
+    useEffect(() => {
+        fetch('http://localhost:4000/isUser', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: user.email })
+        })
+            .then(res => res.json())
+            // .then(data => console.log(data));
+            .then(data => setIsUser(data));
+    }, [])
+    console.log("update data", loginData);
     const handleOnBlur = e => {
-        
+
         const field = e.target.name;
         const value = e.target.value;
-        const newLoginData = { ...loginData };
+        const email = user.email;
+        const newLoginData = { ...loginData, email };
         newLoginData[field] = value;
         setLoginData(newLoginData);
     }
 
     const handleLoginSubmit = e => {
-        console.log("my update",loginData);
-        
-        registerUser(loginData.email, loginData.password, loginData.name)
-        fetch('http://localhost:4000/UpdateTutor', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(loginData)
-        })
+        // console.log("User ki ache? ", isUser);
+        if (isUser) {
+            console.log(isUser[0]._id);
+            fetch(`http://localhost:4000/teacherUpdate/${isUser[0]._id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData),
+            })
             .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    console.log("Updated Successfully")
+                }
+            })
+        }
+        else {
+            fetch('http://localhost:4000/UpdateTutor', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData)
+            })
+                .then(res => res.json())
 
-            .then(data => setLoginData(data))
-            .catch(err => console.log(err))
-
+                .then(data => setLoginData(data))
+                .catch(err => console.log(err))
+        }
 
         e.preventDefault();
     }
@@ -73,7 +96,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
                 </div>
                 <Grid container spacing={2}>
                     <Grid item sx={{ mt: 3 }} xs={12} md={6}>
-                      
+
                         {!Loading && <form onSubmit={handleLoginSubmit}>
 
                             <TextField
@@ -94,35 +117,35 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
                             </div>
 
                             <div className="row">
-                            <div class="form-group w-75 mx-auto p-2 col " onBlur={handleOnBlur}>
-                                <label className="mx-2" >Select salary</label>
-                                <select class="form-control p-3" name="salary" aria-label="Default select example">
+                                <div class="form-group w-75 mx-auto p-2 col " onBlur={handleOnBlur}>
+                                    <label className="mx-2" >Select salary</label>
+                                    <select class="form-control p-3" name="salary" aria-label="Default select example">
 
-                                    <option value="Not set" disabled={true}>Select salary</option>
-                                    <option value="1000-2000">1000-2000</option>
-                                    <option value="2000-5000">2000-5000</option>
-                                    <option value="5000-10000">5000-10000</option>
-                                    <option value="10000-15000">10000-15000</option>
-                                </select>
+                                        <option value="Not set" disabled={true}>Select salary</option>
+                                        <option value="1000-2000">1000-2000</option>
+                                        <option value="2000-5000">2000-5000</option>
+                                        <option value="5000-10000">5000-10000</option>
+                                        <option value="10000-15000">10000-15000</option>
+                                    </select>
 
-                            </div>
+                                </div>
                                 <div class="form-group w-50 p-2 col " onBlur={handleOnBlur}>
-                                <label className="mx-2 " >Class</label>
-                                <select class="form-control p-3 " name="class" aria-label="Default select example">
+                                    <label className="mx-2 " >Class</label>
+                                    <select class="form-control p-3 " name="class" aria-label="Default select example">
 
-                                    <option value="Not set" disabled={true}>Select Class</option>
-                                    <option value="One-Three">One-Three</option>
-                                    <option value="Four-Five">Four-Five</option>
-                                    <option value="Six-Eight">Six-Eight</option>
-                                    <option value="Nine-Ten">Nine-Ten</option>
-                                    <option value="Eleven-Twelve">Eleven-Twelve</option>
-                                </select>
+                                        <option value="Not set" disabled={true}>Select Class</option>
+                                        <option value="One-Three">One-Three</option>
+                                        <option value="Four-Five">Four-Five</option>
+                                        <option value="Six-Eight">Six-Eight</option>
+                                        <option value="Nine-Ten">Nine-Ten</option>
+                                        <option value="Eleven-Twelve">Eleven-Twelve</option>
+                                    </select>
 
+                                </div>
                             </div>
-                            </div>
 
-                            
-                           
+
+
                             <div class="form-group w-75  p-2 " onBlur={handleOnBlur}>
                                 <label className="mx-2" >Select Subject</label>
                                 <select class="form-control p-3" name="subject" aria-label="Default select example">
@@ -162,7 +185,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
 
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <img style={{ width: '100%',paddingTop:"30px" }} src={post} alt="" />
+                        <img style={{ width: '100%', paddingTop: "30px" }} src={post} alt="" />
                     </Grid>
                 </Grid>
 
