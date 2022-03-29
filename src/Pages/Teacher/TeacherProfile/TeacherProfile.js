@@ -10,9 +10,10 @@ import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 import TeacherSetting from '../TeacherSetting/TeacherSetting';
 import TeacherUpdate from '../TeacherUpdate/TeacherUpdate';
 import Footer from '../../../Components/Footer/Footer';
+import teacherimg from '../../../images/teacherimg.jpg'
 import { useEffect } from 'react';
 const TeacherProfile = () => {
-    const { user, logout } = useAuth();
+    const { user} = useAuth();
     const [userData, setUserData] = useState([]);
     const [userUpdate, setUserUpdate] = useState([]);
   
@@ -85,7 +86,7 @@ const TeacherProfile = () => {
 
                         <div className="">
                             <Card className="techers_card   my-5 py-3 w-100">
-                                <img className="teacherimg mx-auto d-block" variant="top" src={user.photoURL} alt="" />
+                                <img className="teacherimg mx-auto d-block" variant="top" src={teacherimg} alt="" />
 
                                 <Card.Body>
                                     <Card.Title><p><b>Account Type: </b>{userData[0]?.role}</p></Card.Title>

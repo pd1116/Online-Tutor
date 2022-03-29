@@ -1,13 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
-import {  Grid, TextField, Typography } from '@mui/material';
-
-import FormControlLabel from '@mui/material/FormControlLabel';
-
+import { Grid, TextField, Typography } from '@mui/material';
 import './StudentUpdate.css';
-import { FormLabel, FormControl } from '@mui/material';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
+import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 
 
 const customStyles = {
@@ -22,19 +17,62 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 const StudentUpdate = ({ modalIsOpen2, closeModal2 }) => {
-    // const StudentUpdate = e => {
-    //     const field = e.target.name;
-    //     const value = e.target.value;
-    //     console.log(value);
+    const [loginData, setLoginData] = useState({});
+    const [isStudent, setIsStudent] = useState(false);
+    const { user } = useAuth();
 
-    // }
-    const StudentUpdateSubmit = e => {
+    useEffect(() => {
+        fetch('http://localhost:4000/isStudent', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: user.email })
+        })
+            .then(res => res.json())
+
+            .then(data => setIsStudent(data));
+    }, [])
+
+    const handleOnBlur = e => {
+
+        const field = e.target.name;
         const value = e.target.value;
-        console.log(value);
-
-        e.prevent();
+        const email = user.email;
+        const newLoginData = { ...loginData, email };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
     }
 
+
+    const handleLoginSubmit = e => {
+        console.log("studentupdate", isStudent);
+        if (isStudent) {
+            console.log(isStudent[0]._id);
+            fetch(`http://localhost:4000/studentUpdate/${isStudent[0]._id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        console.log("Updated Successfully")
+                    }
+                })
+        }
+        else {
+            fetch('http://localhost:4000/UpdateStudent', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData)
+            })
+                .then(res => res.json())
+
+                .then(data => setLoginData(data))
+                .catch(err => console.log(err))
+        }
+
+        e.preventDefault();
+    }
 
     return (
         <div >
@@ -61,7 +99,7 @@ const StudentUpdate = ({ modalIsOpen2, closeModal2 }) => {
 
                     <Grid item sx={{ mt: 2 }} xs={12} md={12}>
 
-                        <form nSubmit={StudentUpdateSubmit}>
+                        <form onSubmit={handleLoginSubmit}>
                             <div className="row   ">
                                 <div className="col-12 w-70" >
 
@@ -73,87 +111,38 @@ const StudentUpdate = ({ modalIsOpen2, closeModal2 }) => {
                                             id="standard-basic"
                                             label="Your Name"
                                             name="name"
-                                            // onBlur={handleOnBlur}
+                                            onBlur={handleOnBlur}
                                             variant="standard" />
-                                       
-                                        <FormControl>
 
-                                            <RadioGroup
-                                                row
-                                                aria-labelledby="demo-row-radio-buttons-group-label"
-                                                name="row-radio-buttons-group">
-                                                <FormLabel id="demo-row-radio-buttons-group-label " sx={{ width: '20%', m: 2 }} >Gender</FormLabel>
-                                                <FormControlLabel value="female" control={<Radio />} label="Female" />
-                                                <FormControlLabel value="male" control={<Radio />} label="Male" />
-
-                                            </RadioGroup>
-                                        </FormControl>
-
-                                        <br />
-
-                                        <div class="form-check p-2 w-50">
-
-                                            <div class="">
-                                                <h6>Phone Number</h6>  <input type="text" id="phone" placeholder="Enter Your Number" className="form-control" />
+                                        <TextField
+                                            sx={{ width: '75%', m: 1 }}
+                                            id="standard-basic"
+                                            label="Your Phone Number"
+                                            name="phone"
+                                            onBlur={handleOnBlur}
+                                            variant="standard" />
+                                        <TextField
+                                            sx={{ width: '75%', m: 1 }}
+                                            id="standard-basic"
+                                            label="Your Institute"
+                                            name="institute"
+                                            onBlur={handleOnBlur}
+                                            variant="standard" />
+                                        <div className="Gender pt-2">
+                                            <div onBlur={handleOnBlur}>
+                                                <label className="mx-2" >Gender</label>
+                                                <input className="mx-1" type="radio" value="Male" name="gender" /> Male
+                                                <input className="mx-1" type="radio" value="Female" name="gender" /> Female
                                             </div>
                                         </div>
-                                        <div class="form-check p-2 w-50">
-
-                                            <div class="">
-                                                <h6>Institute:</h6>  <input type="text" id="institute" placeholder="school/college" className="form-control" />
-                                            </div>
-                                        </div>
-                                        <div class="form-check p-2 w-50">
-
-                                            <div class="">
-                                                <h6>Location:</h6>  <input type="location" id="location" placeholder="eg:  Mirpur 2, Dhaka" className="form-control" />
-                                            </div>
-                                        </div>
-
-
-
-
-
-
-
                                     </Grid>
-
-
-                                    {/* //location */}
-                                    <div className="row  pt-3 pb-3">
-                                        <div className="col-md-3">
-
-
-                                        </div>
-                                        <div className="col-md-3">
-
-
-                                        </div>
-
-
-                                    </div>
-
-                                    <button className="btn btn-success d-flex mx-auto mb-2   " sx={{ width: '70%', my: 1 }} type="submit" >Update Information </button>
-
-
-
+                                    <button className="btn btn-success d-flex mx-auto mb-2 pt-2  " sx={{ width: '70%', my: 1 }} type="submit" >Update Information </button>
                                 </div>
 
                             </div>
-
-
-
                         </form>
-
-
                     </Grid>
-
                 </Grid>
-
-
-
-
-
             </Modal>
 
         </div>

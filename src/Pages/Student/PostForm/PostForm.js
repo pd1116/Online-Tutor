@@ -22,7 +22,7 @@ const  PostForm = () => {
 
     const { user, registerUser, Loading, authError } = useAuth();
 
-
+// console.log(user.email);
     const handleOnBlur = e => {
         // console.log(e);
         const field = e.target.name;
@@ -68,10 +68,12 @@ const  PostForm = () => {
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
                             label="Your Email"
+                            value ={user.email}
                             name="email"
                             type="email"
                             onBlur={handleOnBlur}
-                            variant="standard" />
+                            variant="standard"
+                           />
 
                         <TextField
                             sx={{ width: '75%', m: 1 }}
