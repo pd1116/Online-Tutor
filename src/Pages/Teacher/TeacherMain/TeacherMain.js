@@ -13,23 +13,25 @@ const TeacherMain = () => {
             .then(data => setPostinfo(data))
         // .then(data => console.log(data))
     }, [])
-    
-   
+
+
     return (
         <div>
             <Header></Header>
-           <TeacherNavbar  ></TeacherNavbar>
-           <div className="post_info  row p-3 m-3"></div>
-            {
+            <TeacherNavbar  ></TeacherNavbar>
+            <div className="post_info  row p-3 m-3">
+                {
+                    postinfo.map(postinfo => <TeacherNewsfeed postinfo={postinfo} key={postinfo._id}></TeacherNewsfeed>)
+                }
+            </div>
 
-                postinfo.map(postinfo => <TeacherNewsfeed postinfo={postinfo} key={postinfo._id}></TeacherNewsfeed>)
 
-            }
-           
-         
 
-          
-      
+
+
+
+
+
         </div>
     );
 };

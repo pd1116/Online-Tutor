@@ -12,13 +12,13 @@ const StudentMain = () => {
         fetch('http://localhost:4000/postinfo')
             .then(res => res.json())
             .then(data => setPostinfo(data))
-        // .then(data => console.log(data))
+        
     }, [])
     return (
-        <div>
+        <div className="bg-dark">
             <Header></Header>
             <StudentNavbar></StudentNavbar>
-            {/* <p>{postinfo[0].name}.</p> */}
+            <h3>newsfeed</h3>
             <div className="post_info  row p-3 m-3"></div>
             {
 
