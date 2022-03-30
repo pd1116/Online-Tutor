@@ -5,7 +5,7 @@ import './ExploreTutor.css'
 const ExploreTutor = () => {
     return (
         <div className="  explore_tutor">
-            <h1 className="py-3 text-light">Explore teacher</h1>
+            <h1 className="py-3 text-light">Explore</h1>
 
 
             <div className="Explore">

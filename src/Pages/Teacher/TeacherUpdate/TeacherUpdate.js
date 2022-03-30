@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { Button, CircularProgress, Grid, TextField, Typography } from '@mui/material';
-
+import swal from 'sweetalert';
 import './TeacherUpdate.css';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 import post from '../../../images/post.png';
@@ -42,6 +42,15 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
     }
 
     const handleLoginSubmit = e => {
+        fetch('http://localhost:4000/UpdateTutor', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData)
+            })
+                .then(res => res.json())
+
+                .then(data => setLoginData(data))
+                .catch(err => console.log(err))
         // alert("kire vai")
        
         console.log("User ki ache? ", isUser);
@@ -75,6 +84,18 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
 
         e.preventDefault();
     }
+
+
+    
+const popUp = () => {
+        swal({
+            title: "Your information is Updated!",
+            text: " ",
+            icon: "success",
+            button: "OK",
+        });
+    }
+
 
 
     return (
@@ -177,7 +198,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
 
 
 
-                            <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Update</Button>
+                            <Button onClick={popUp} sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Update</Button>
 
                         </form>}
                         {

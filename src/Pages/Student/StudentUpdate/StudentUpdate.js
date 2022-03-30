@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { Grid, TextField, Typography } from '@mui/material';
 import './StudentUpdate.css';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
-
+import swal from 'sweetalert';
 
 const customStyles = {
     content: {
@@ -45,7 +45,19 @@ const StudentUpdate = ({ modalIsOpen2, closeModal2 }) => {
 
     const handleLoginSubmit = e => {
         console.log("studentupdate", isStudent);
+        fetch('http://localhost:4000/UpdateStudent', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(loginData)
+        })
+            .then(res => res.json())
+
+            .then(data => setLoginData(data))
+            .catch(err => console.log(err))
+
+
         if (isStudent) {
+            console.log(isStudent[0].email);
             console.log(isStudent[0]._id);
             fetch(`http://localhost:4000/studentUpdate/${isStudent[0]._id}`, {
                 method: 'PATCH',
@@ -72,6 +84,15 @@ const StudentUpdate = ({ modalIsOpen2, closeModal2 }) => {
         }
 
         e.preventDefault();
+    }
+
+    const popUp = () => {
+        swal({
+            title: "Your Information is Updated!",
+            text: "",
+            icon: "success",
+            button: "OK",
+        });
     }
 
     return (
@@ -136,7 +157,7 @@ const StudentUpdate = ({ modalIsOpen2, closeModal2 }) => {
                                             </div>
                                         </div>
                                     </Grid>
-                                    <button className="btn btn-success d-flex mx-auto mb-2 pt-2  " sx={{ width: '70%', my: 1 }} type="submit" >Update Information </button>
+                                    <button onClick={popUp} className="btn btn-success d-flex mx-auto mb-2 pt-2  " sx={{ width: '70%', my: 1 }} type="submit" >Update Information </button>
                                 </div>
 
                             </div>

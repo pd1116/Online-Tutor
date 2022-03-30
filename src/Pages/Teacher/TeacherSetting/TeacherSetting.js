@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { Button, Grid, TextField, Typography } from '@mui/material';
-
+import swal from 'sweetalert';
 const customStyles = {
     content: {
         top: '50%',
@@ -29,7 +29,14 @@ const TeacherSetting = ({ modalIsOpen, closeModal }) => {
     }
 
 
-
+    const popUp = () => {
+        swal({
+            title: "Your password is Changed!",
+            text: " ",
+            icon: "success",
+            button: "OK",
+        });
+    }
     return (
         <div className=" " >
 
@@ -81,7 +88,7 @@ const TeacherSetting = ({ modalIsOpen, closeModal }) => {
                                 // onBlur={}
                                 variant="standard" />
 
-                            <Button  className="btn d-flex mx-auto "sx={{ width: '50%', my: 3  }} type="submit" variant="contained">Change Password</Button>
+                            <Button onClick={popUp} className="btn d-flex mx-auto "sx={{ width: '50%', my: 3  }} type="submit" variant="contained">Change Password</Button>
 
                         </form>
 

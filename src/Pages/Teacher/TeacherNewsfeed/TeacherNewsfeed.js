@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './TeacherNewsfeed.css'
 import { Card } from 'react-bootstrap';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
-// import stdicons from "../../../images/stdicons.PNG";
+import swal from 'sweetalert';
 
 
 import stdimg1 from "../../../images/avatar2.webp";
@@ -56,6 +56,16 @@ const TeacherNewsfeed = ({ postinfo }) => {
             e.preventDefault();
     
     }
+
+    const popUp = () => {
+        swal({
+            title: "Successfully Applied!",
+            text: " ",
+            icon: "success",
+            button: "OK",
+        });
+    }
+
     return (
 
 
@@ -90,8 +100,8 @@ const TeacherNewsfeed = ({ postinfo }) => {
 
 
                     </div>
-                    <button className='btn btn-outline-success w-50 mx-auto' id="myBtn" onClick={hendleApply}><span >Apply</span></button>
-                    {/* <span id="demo"></span> */}
+                    <button  className='btn btn-outline-success w-50 mx-auto' id="myBtn" onClick={hendleApply}><span onClick={popUp} >Apply</span></button>
+                   
 
 
 

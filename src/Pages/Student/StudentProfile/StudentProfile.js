@@ -14,8 +14,7 @@ const StudentProfile = () => {
     const { user, logout } = useAuth();
     const [userData, setUserData] = useState([]);
     const [userUpdate, setUserUpdate] = useState([]);
-    console.log(user.email);
-    console.log(userData);
+
     useEffect(() => {
         fetch('http://localhost:4000/role', {
             method: 'POST',
@@ -53,6 +52,19 @@ const StudentProfile = () => {
         setIsOpen2(false);
     }
 
+//     import swal from 'sweetalert';
+
+// const popUp = () => {
+//         swal({
+//             title: "Your Information is Updated!",
+//             text: "",
+//             icon: "success",
+//             button: "OK",
+//         });
+//     }
+
+// onClick={popUp}
+
     return (
         <div className="StudentProfile">
             <Header></Header>
@@ -60,7 +72,7 @@ const StudentProfile = () => {
             <div className="row ">
                 <div className="prfilenav  col-md-6  pt-5">
                     <Link className="btn  btn-success s w-50" to="/StudentProfile">About</Link><br />
-                    <Link className="btn btn-outline-success w-50" to="/posts">Post</Link> <br />
+                    {/* <Link className="btn btn-outline-success w-50" to="/posts">Post</Link> <br /> */}
 
 
                     <button onClick={openModal} className="btn btn-outline-success w-50 " >Setting</button>
@@ -81,21 +93,38 @@ const StudentProfile = () => {
                                     <Card.Text className="card_text">
 
                                         {
-                                             user?.email === userData[0]?.mail?
+                                            //  user?.email === userData[0]?.mail?
+                                            //     <div className="information">
+                                            //         <p><b> Name:  </b>{userData[0]?.name}</p>
+                                            //         <p><b> Email:  </b>{userData[0]?.mail}</p>
+                                            //         <p><b> Phone: </b>{userData[0]?.phone}</p>
+                                            //         <p><b> Gender: </b>{userData[0]?.gender}</p>
+                                            //         <p><b> Institute: </b>{userData[0]?.institute}</p>
+                                            //     </div>
+                                            //     :
+                                            //     <div className="informationupdate">
+                                            //         <p><b> Name: </b> {userUpdate[0]?.name}</p>
+                                            //         <p><b> Email:  </b>{userUpdate[0]?.email}</p>
+                                            //         <p><b> Phone: </b>{userUpdate[0]?.phone}</p>
+                                            //         <p><b> Gender: </b>{userUpdate[0]?.gender}</p>
+                                            //         <p><b> Institute: </b>{userUpdate[0]?.institute}</p>
+                                            //     </div>
+
+                                            user?.email === userData[userData.length - 1]?.mail ?
                                                 <div className="information">
-                                                    <p><b> Name:  </b>{userData[0]?.name}</p>
-                                                    <p><b> Email:  </b>{userData[0]?.mail}</p>
-                                                    <p><b> Phone: </b>{userData[0]?.phone}</p>
-                                                    <p><b> Gender: </b>{userData[0]?.gender}</p>
-                                                    <p><b> Institute: </b>{userData[0]?.institute}</p>
+                                                    <p><b> Name:  </b>{userData[userData.length - 1]?.name}</p>
+                                                    <p><b> Email:  </b>{userData[userData.length - 1]?.mail}</p>
+                                                    <p><b> Phone: </b>{userData[userData.length - 1]?.phone}</p>
+                                                    <p><b> Gender: </b>{userData[ userData.length - 1]?.gender}</p>
+                                                    <p><b> Institute: </b>{userData[ userData.length - 1]?.institute}</p>
                                                 </div>
                                                 :
                                                 <div className="informationupdate">
-                                                    <p><b> Name: </b> {userUpdate[0]?.name}</p>
-                                                    <p><b> Email:  </b>{userUpdate[0]?.email}</p>
-                                                    <p><b> Phone: </b>{userUpdate[0]?.phone}</p>
-                                                    <p><b> Gender: </b>{userUpdate[0]?.gender}</p>
-                                                    <p><b> Institute: </b>{userUpdate[0]?.institute}</p>
+                                                    <p><b> Name: </b> {userUpdate[userUpdate.length - 1]?.name}</p>
+                                                    <p><b> Email:  </b>{userUpdate[userUpdate.length - 1]?.email}</p>
+                                                    <p><b> Phone: </b>{userUpdate[userUpdate.length - 1]?.phone}</p>
+                                                    <p><b> Gender: </b>{userUpdate[userUpdate.length - 1]?.gender}</p>
+                                                    <p><b> Institute: </b>{userUpdate[userUpdate.length - 1]?.institute}</p>
                                                 </div>
                                         }
 

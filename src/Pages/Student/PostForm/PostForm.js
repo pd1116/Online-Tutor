@@ -9,7 +9,7 @@ import useAuth from '../../../Components/Login/FirebaseConfig/useAuth'
 import post from '../../../images/post.png'
 
 import StudentNavbar from '../StudentNavbar/StudentNavbar';
-
+import swal from 'sweetalert';
 
 
 
@@ -48,6 +48,20 @@ const  PostForm = () => {
         
         e.preventDefault();
     }
+
+
+     
+
+const popUp = () => {
+        swal({
+            title: "You have Successfully Posted!",
+            text: " ",
+            icon: "success",
+            button: "OK",
+        });
+    }
+
+
     return (
 
 
@@ -159,7 +173,7 @@ const  PostForm = () => {
 
 
 
-                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Post Your Form</Button>
+                        <Button onClick={popUp} sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Post Your Form</Button>
                         
                     </form>}
                     {

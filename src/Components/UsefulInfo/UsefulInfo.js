@@ -10,7 +10,7 @@ const UsefulInfo = () => {
     return (
         <div className="useful-info container">
             
-            <h1 className="pb-5"><InfoIcon sx={{ fontSize: 35,mb: 1, }}></InfoIcon> Useful Tutor Information </h1>
+            <h1 className="pb-5"><InfoIcon sx={{ fontSize: 35,mb: 1, }}></InfoIcon> Useful Information </h1>
             <ul>
                 <div className="row">
                     <div className="col-md-4">
