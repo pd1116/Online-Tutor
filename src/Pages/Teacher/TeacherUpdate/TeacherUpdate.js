@@ -30,7 +30,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
             // .then(data => console.log(data));
             .then(data => setIsUser(data));
     }, [])
-    console.log("update data", loginData);
+ 
     const handleOnBlur = e => {
 
         const field = e.target.name;
@@ -42,7 +42,9 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
     }
 
     const handleLoginSubmit = e => {
-        // console.log("User ki ache? ", isUser);
+        // alert("kire vai")
+       
+        console.log("User ki ache? ", isUser);
         if (isUser) {
             console.log(isUser[0]._id);
             fetch(`http://localhost:4000/teacherUpdate/${isUser[0]._id}`, {
@@ -51,11 +53,13 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
                 body: JSON.stringify(loginData),
             })
             .then(res => res.json())
-            .then(data => {
-                if (data) {
-                    console.log("Updated Successfully")
-                }
-            })
+            .then(data => setIsUser(data))
+            // .then(data => console.log(data));
+            // .then(data => {
+            //     if (data) {
+            //         console.log("Updated Successfully")
+            //     }
+            // })
         }
         else {
             fetch('http://localhost:4000/UpdateTutor', {

@@ -26,8 +26,13 @@ const TeacherNewsfeed = ({ postinfo }) => {
     }, [])
 
     const hendleApply = e => {
-        
-        // console.log(userData[0].name);
+        // document.getElementById("myBtn").innerText=" ";
+
+        // document.getElementById("myBtn").innerText="wowo";
+
+        // console.log(document.getElementById("myBtn").innerText);
+
+
         const applicatDetails = {
             email: user.email,
             name: userData[0].name,
@@ -49,6 +54,7 @@ const TeacherNewsfeed = ({ postinfo }) => {
             .catch(err => console.log(err))
      
             e.preventDefault();
+    
     }
     return (
 
@@ -84,7 +90,8 @@ const TeacherNewsfeed = ({ postinfo }) => {
 
 
                     </div>
-                    <button className='btn btn-outline-success w-50 mx-auto' onClick={hendleApply}>Apply</button>
+                    <button className='btn btn-outline-success w-50 mx-auto' id="myBtn" onClick={hendleApply}><span >Apply</span></button>
+                    {/* <span id="demo"></span> */}
 
 
 

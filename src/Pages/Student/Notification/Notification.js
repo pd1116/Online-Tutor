@@ -20,6 +20,8 @@ const Notification = () => {
             <StudentNavbar></StudentNavbar>
             {/* <h1>{applicantresponse[0]?.name} just Accept Your Request</h1> */}
             <p><b> Name: </b> {applicantresponse[0]?.name} accept your request</p>
+            <p><b> Name: </b> {applicantresponse[0]?.email} accept your request</p>
+            <p><b> Name: </b> {applicantresponse[0]?.phone} accept your request</p>
         </div>
     );
 };

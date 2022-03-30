@@ -31,7 +31,8 @@ const TeacherProfile = () => {
 
 
     //update info calling
-    console.log(userUpdate);
+    console.log("your data",userData);
+    console.log("your update data",userUpdate);
     useEffect(() => {
         fetch('http://localhost:4000/updateinfo')
             .then(res => res.json())
