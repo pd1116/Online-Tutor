@@ -1,4 +1,5 @@
 import React from 'react';
+import { Carousel } from 'react-bootstrap';
 
 import Navbars from '../Navbars/Navbars';
 import './Search.css'
@@ -15,7 +16,7 @@ const Search = () => {
                 <div className=" col-md-7 ">
 
 
-                    <form  role="form" method="post" action>
+                    <form role="form" method="post" action>
                         <h2 className="text-center">Search Tutor</h2>
                         {/* select medium  */}
                         <div className="select_class">
@@ -104,7 +105,7 @@ const Search = () => {
                                 <input type="location" id="location" placeholder="e.g: Mirpur 2, Dhaka" className="form-control" />
                             </div>
                         </div>
- 
+
 
                         <input type="submit" value="Search" className="btn btn-success my-3 w-100" />
 
@@ -112,8 +113,13 @@ const Search = () => {
                     </form>
 
                 </div>
-                {/* <div className="col-md-6">
-                    <h3>result</h3>
+                {/* <div className="col-md-5 pt-5">
+                <Carousel>
+                        <Carousel.Item>
+                          
+                            <iframe width="560" height="415" src="https://www.youtube.com/embed/V8y4DD6W4bY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </Carousel.Item>
+                    </Carousel>
                 </div> */}
 
             </div>

@@ -13,6 +13,9 @@ const LearningVideo = () => {
                <div className="col-md-6 ">
                <Carousel>
                 <Carousel.Item>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/V8y4DD6W4bY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </Carousel.Item>
+                <Carousel.Item>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/r5zf-0hAaAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
                 </Carousel.Item>
                 <Carousel.Item>
