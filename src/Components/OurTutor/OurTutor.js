@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import './OurTutor.css';
-// import nayeem from '../../images/student 4.jpg'
+
 
 
 const OurTutor = ({ info }) => {
