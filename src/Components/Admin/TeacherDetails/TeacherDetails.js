@@ -8,4 +8,4 @@ const TeacherDetails = () => {
     );
 };
 
-export default TeacherDetails;<h3>Teacher Details</h3>
+export default TeacherDetails;

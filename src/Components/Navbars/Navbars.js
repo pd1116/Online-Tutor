@@ -7,11 +7,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const Navbars = () => {
 
     const { user, logout } = useAuth();
+    
     //   const { user } = useAuth();
-    // console.log(" myuser:",user);   
+    console.log(" myuser:",user);   
     const [userData, setUserData] = useState([]);
-    console.log(user.email);
-    console.log(userData);
+   
     useEffect(() => {
         fetch('http://localhost:4000/role', {
             method: 'POST',
@@ -20,7 +20,7 @@ const Navbars = () => {
         })
             .then(res => res.json())
             .then(data => setUserData(data));
-    }, [])
+    }, [user.email])
     return (
         <div className="">
             {/* Navbar start here  */}
@@ -37,15 +37,19 @@ const Navbars = () => {
                         <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/contact">Contact Us</NavLink>
 
                     </Nav>
+                   
 
                     {
                         userData[0]?.role === "Teacher" ?
                             <NavLink to="/teachermain" class="login_btn  text-white d-flex align-items-center"><span class="nav_icon"><AccountCircleIcon sx={{ fontSize: 30, mr: 1 }}></AccountCircleIcon></span> {userData[0].name}</NavLink>
                         : userData[0]?.role === "Student" ?  
                         <NavLink to="/studentmain" class="login_btn  text-white d-flex align-items-center "><span class="nav_icon"><AccountCircleIcon sx={{ fontSize: 30, mr: 1 }}></AccountCircleIcon></span>{userData[0].name}</NavLink>
-                          :
-                        <h5> </h5>
-
+                          : user.email === 'shamuelsam300@gmail.com'?
+                          <NavLink to="/dashboard" class="login_btn  text-white d-flex align-items-center "><span class="nav_icon"><AccountCircleIcon sx={{ fontSize: 30, mr: 1 }}></AccountCircleIcon></span>{user.displayName}</NavLink>
+                        
+                        :<h5> </h5>
+                         
+                     
                     }
                      
 
