@@ -39,6 +39,8 @@ import TeacherNotification from './Pages/Teacher/TeacherNotification/TeacherNoti
 import Notification from './Pages/Student/Notification/Notification';
 import Newsfeed from './Pages/Student/Newsfeed/Newsfeed';
 import Dashboard from './Components/Admin/Dashboard/Dashboard';
+import StudentDetails from './Components/Admin/StudentDetails/StudentDetails';
+import TeacherDetails from './Components/Admin/TeacherDetails/TeacherDetails';
 
 function App() {
   // const {user } = useAuth();
@@ -151,6 +153,12 @@ function App() {
             {/* admin part */}
             <Route path="/dashboard">
             <Dashboard></Dashboard>
+            </Route>
+            <Route path="/studentdetails">
+            <StudentDetails></StudentDetails>
+            </Route>
+            <Route path="/teacherdetails">
+            <TeacherDetails></TeacherDetails>
             </Route>
 
 

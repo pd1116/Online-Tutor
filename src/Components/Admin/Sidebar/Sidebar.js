@@ -33,7 +33,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/home" className="text-light">
+                    <Link to="/teacherdetails" className="text-light">
                     <PersonOutlineIcon className="text-light"  style={{color:'red',fontSize:'20px'}}> </PersonOutlineIcon> <span>Teachers</span>
                     
                        
@@ -41,7 +41,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/home" className="text-light">
+                    <Link to="/studentdetails" className="text-light">
                     <PersonOutlineIcon className="text-light"  style={{color:'red',fontSize:'20px'}}> </PersonOutlineIcon> <span>Students</span>
                     
                        

@@ -19,9 +19,6 @@ const Dashboard = () => {
         <div>
     
 
-
-
-
             {/* <h3>Dashboard of Admin {clients2.length} </h3> */}
          
             <div className="container-fluid row p-0">
@@ -36,6 +33,7 @@ const Dashboard = () => {
                     } */}
 
                     <Clients clients={clients}></Clients>
+                    
                     {/* <ClientsList></ClientsList> */}
                     {/* <ClientsList clients={clients}></ClientsList> */}
                 
