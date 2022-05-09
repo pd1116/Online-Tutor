@@ -12,15 +12,24 @@ const Dashboard = () => {
                 .then(data => setClients(data ))
             
         }, [])
+
+    
+
     return (
         <div>
-            <h3>Dashboard of Admin </h3>
-            <div className="container-fluid row">
-                <div className="col-md-4">
+    
+
+
+
+
+            {/* <h3>Dashboard of Admin {clients2.length} </h3> */}
+         
+            <div className="container-fluid row p-0">
+                <div className="col-md-2">
                     <Sidebar></Sidebar>
                 </div>
 
-                <div className="col-md-8">
+                <div className="col-md-10">
 
                     {/* {
                         clients.map(clientsinfo =><Clients clientsinfo={clientsinfo} key={clientsinfo._id}></Clients>)

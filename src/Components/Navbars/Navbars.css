@@ -11,6 +11,7 @@
     color: whitesmoke;
     transition:0.4s ease;
     font-size:20px;
+   
 }
 .nav_bar a:hover{
     background-color:#34495e;

@@ -1,0 +1,19 @@
+.clients table,h4{
+ 
+    text-align: left;
+    font-size: 20px;
+}
+.clients table td{
+    padding:10px;
+}
+
+.clientsinfo{
+    border-radius: 10px;
+    /* padding: 20px 0px; */
+    color: white;
+  
+}
+ 
+.currentuser{
+    font-size: 80px;
+}
