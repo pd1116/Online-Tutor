@@ -12,9 +12,7 @@ const Dashboard = () => {
                 .then(data => setClients(data ))
             
         }, [])
-
-    
-
+        
     return (
         <div>
     
@@ -32,7 +30,7 @@ const Dashboard = () => {
                         clients.map(clientsinfo =><Clients clientsinfo={clientsinfo} key={clientsinfo._id}></Clients>)
                     } */}
 
-                    <Clients clients={clients}></Clients>
+                    <Clients clients={clients} ></Clients>
                     
                     {/* <ClientsList></ClientsList> */}
                     {/* <ClientsList clients={clients}></ClientsList> */}

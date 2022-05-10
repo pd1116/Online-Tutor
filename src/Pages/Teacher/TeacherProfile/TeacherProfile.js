@@ -76,7 +76,9 @@ const TeacherProfile = () => {
                   
 
 
-                    <button onClick={openModal} className="btn btn-outline-success w-50 " >Setting</button>
+                    <button onClick={openModal} className="btn btn-outline-warning w-50 " >Setting</button>
+                    <br />
+                    <Link className="btn  btn-info s w-50" to="/teacherpayments">Make Payment</Link><br />
 
 
 

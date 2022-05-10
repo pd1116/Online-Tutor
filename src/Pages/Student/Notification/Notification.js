@@ -17,7 +17,7 @@ const Notification = () => {
             // .then(data => console.log(data))
             .then(data => setapplicantresponse(data))
     }, [])
-    console.log(" myuser:", applicantresponse[0]?.email);
+    // console.log(" myuser:", applicantresponse[0]);
     // applicantresponse
     return (
         <div>
@@ -25,8 +25,9 @@ const Notification = () => {
             <Header></Header>
             <StudentNavbar></StudentNavbar>
             {applicantresponse[0]?.email ?
+            // { applicantresponse[applicantresponse.length - 1].email ?
                 <Card className="techers_card py-3 mx-auto m-5 w-50">
-
+               
                     <Card.Body className="row">
                         <Card.Title>{applicantresponse[0]?.name} just Accept Your Request</Card.Title>
 

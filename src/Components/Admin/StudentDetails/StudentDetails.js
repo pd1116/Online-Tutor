@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import './StudentDetails.css';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 const StudentDetails = () => {
 
 
     const [studentDetails, setStudentDetails] = useState([]);
 
     useEffect(() => {
-        console.log("hit");
-        fetch('http://localhost:4000/clients')
+        
+        fetch('http://localhost:4000/Clients')
             .then(res => res.json())
             // .then(data => console.log("our studentDetails",data));
             .then(data => setStudentDetails(data))
 
-    }, [])
+    }, [studentDetails])
 
 
-    console.log((studentDetails[0]?._id));
+     
     //delete itemss
 
  
 
     const handleDelete=(id)=>{
         console.log("Clicked",id);
-        fetch(`/delete/${id}`,{
+        fetch(`http://localhost:4000/delete/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -60,13 +62,13 @@ const StudentDetails = () => {
                                 <th className="text-light" scope="col">Action</th>
                             </tr>
                         </thead>
-
+ 
                         <tbody className="text-none">
                             {
                                 studentDetails.map((studentDetails, index) =>
 
                                     studentDetails.role === "Student" ?
-                                        <tr className="table-warning " >
+                                        <tr className="table table-borderless" >
 
                                             <td className="text-dark"> {studentDetails.name}</td>
                                             <td className="text-dark"> {studentDetails.mail}</td>
@@ -75,7 +77,7 @@ const StudentDetails = () => {
                                             <td className="text-dark"> {studentDetails.role}</td>
                                             {/* <td onClick={deleteItem(studentDetails._id)} className=" text-dark py-2 btn btn-outline-danger deleteAccount" > Delete</td> */}
                                            {
-                                                <td  onClick={()=>handleDelete(`${studentDetails._id}`)} className=" text-dark py-2 btn btn-outline-danger deleteAccount" > Delete</td>
+                                                <td onClick={()=>handleDelete(`${studentDetails._id}`)} className=" text-light py-2 bg-danger btn btn-outline-danger  deleteAccount" > <DeleteIcon></DeleteIcon>   Delete</td>
 
 
                                            }

@@ -9,6 +9,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import HomeIcon from '@mui/icons-material/Home';
+import PaidIcon from '@mui/icons-material/Paid';
 const Sidebar = () => {
     const { user, logout } = useAuth();
    
@@ -43,6 +44,14 @@ const Sidebar = () => {
                 <li>
                     <Link to="/studentdetails" className="text-light">
                     <PersonOutlineIcon className="text-light"  style={{color:'red',fontSize:'20px'}}> </PersonOutlineIcon> <span>Students</span>
+                    
+                       
+                      
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/payments" className="text-light">
+                    <PaidIcon className="text-light"  style={{color:'red',fontSize:'20px'}}> </PaidIcon> <span>Payments</span>
                     
                        
                       

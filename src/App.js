@@ -41,6 +41,8 @@ import Newsfeed from './Pages/Student/Newsfeed/Newsfeed';
 import Dashboard from './Components/Admin/Dashboard/Dashboard';
 import StudentDetails from './Components/Admin/StudentDetails/StudentDetails';
 import TeacherDetails from './Components/Admin/TeacherDetails/TeacherDetails';
+import Payments from './Components/Admin/Payments/Payments';
+import Teacherpayments from './Pages/Teacher/Teacherpayments/Teacherpayments';
 
 function App() {
   // const {user } = useAuth();
@@ -133,6 +135,9 @@ function App() {
             <Route path="/techernewsfeed">
             <TeacherNewsfeed></TeacherNewsfeed>
             </Route>
+            <Route path="/teacherpayments">
+            <Teacherpayments></Teacherpayments>
+            </Route>
 
 
             {/* Student section  */}
@@ -159,6 +164,9 @@ function App() {
             </Route>
             <Route path="/teacherdetails">
             <TeacherDetails></TeacherDetails>
+            </Route>
+            <Route path="/payments">
+            <Payments></Payments>
             </Route>
 
 

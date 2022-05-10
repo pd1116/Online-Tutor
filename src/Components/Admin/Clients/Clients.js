@@ -3,7 +3,14 @@ import './Clients.css';
 const Clients = ({ clients }) => {
     // const {name,email,gender,role,phone} = clientsinfo;
 
- 
+    let studentCnt=0,teacherCnt=0;
+        for(let i=0;i<clients.length;i++){
+            if(clients[i].role==='Student')
+                studentCnt++;
+            else
+                teacherCnt++;
+        }
+        console.log(studentCnt,teacherCnt);
 
     return (
         <div className="clients text-left">
@@ -20,14 +27,14 @@ const Clients = ({ clients }) => {
                     </div>
                     <div className="col-12 col-md-3 m-4 bg-danger clientsinfo">
                         <div className="row  ">
-                            <h2 className="col-md-4  pt-2  currentuser text-center"> {clients.length} </h2>
+                            <h2 className="col-md-4  pt-2  currentuser text-center"> {teacherCnt} </h2>
                             <h4 className="col-md-8 pt-4 "> Total <br></br> Teacher</h4>
 
                         </div>
                     </div>
                     <div className="col-12 col-md-3 m-4 bg-success clientsinfo">
                         <div className="row  ">
-                            <h2 className="col-md-4  pt-2  currentuser text-center"> {clients.length} </h2>
+                            <h2 className="col-md-4  pt-2  currentuser text-center"> {studentCnt} </h2>
                             <h4 className="col-md-8 pt-4 "> Total <br></br> Student</h4>
 
                         </div>
