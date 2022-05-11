@@ -24,7 +24,7 @@ const Register = () => {
 
 
     const handleOnBlur = e => {
-        // console.log(e);
+        console.log(e);
         const field = e.target.name;
         const value = e.target.value;
         const newLoginData = { ...loginData };

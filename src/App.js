@@ -43,6 +43,7 @@ import StudentDetails from './Components/Admin/StudentDetails/StudentDetails';
 import TeacherDetails from './Components/Admin/TeacherDetails/TeacherDetails';
 import Payments from './Components/Admin/Payments/Payments';
 import Teacherpayments from './Pages/Teacher/Teacherpayments/Teacherpayments';
+import SearchResult from './Components/Search/SearchResult';
 
 function App() {
   // const {user } = useAuth();
@@ -65,6 +66,9 @@ function App() {
             </Route>
             <Route path="/search">
               <Search></Search>
+            </Route>
+            <Route path="/searchresult">
+              <SearchResult></SearchResult>
             </Route>
 
             <Route path="/login">

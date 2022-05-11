@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import StudentMain from '../../Pages/Student/StudentMain/StudentMain';
-import TeacherMain from '../../Pages/Teacher/TeacherMain/TeacherMain';
+ 
 import TeacherProfile from '../../Pages/Teacher/TeacherProfile/TeacherProfile';
 import useAuth from '../Login/FirebaseConfig/useAuth';
 
-const Dashboard = () => {
+const Dashboards = () => {
     const [loginData, setLoginData] = useState({});
 
     const { user, registerUser, Loading, authError } = useAuth();
@@ -28,4 +28,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default Dashboards;
