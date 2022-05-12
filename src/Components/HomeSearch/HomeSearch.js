@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+ 
 import Search from '../Search/Search'
 import './HomeSearch.css'
 

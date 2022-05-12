@@ -6,10 +6,10 @@ import useAuth from '../Login/FirebaseConfig/useAuth';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const Navbars = () => {
 
-    const { user, logout } = useAuth();
+    const { user  } = useAuth();
     
     //   const { user } = useAuth();
-    console.log(" myuser:",user);   
+  
     const [userData, setUserData] = useState([]);
    
     useEffect(() => {
@@ -32,7 +32,7 @@ const Navbars = () => {
                     <Nav className="me-auto mx-5">
 
                         <NavLink className="p-4  " style={{ textDecoration: 'none' }} to="/home">Home</NavLink>
-                        <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/search">Search Tutor</NavLink>
+                        <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/searchresult">Search Tutor</NavLink>
 
                         <NavLink className="p-4 " style={{ textDecoration: 'none' }} to="/contact">Contact Us</NavLink>
 

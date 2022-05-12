@@ -1,61 +1,61 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+ 
 import { Link } from 'react-router-dom';
 
 import Navbars from '../Navbars/Navbars';
 import './Search.css'
-import SearchResult from './SearchResult';
+ 
 
 
-const SearchData = [
-    {
-        name: "Nayeem Zaman",
-        medium: "Bangla",
-        subject: "  Bangla",
-        class: "Six-Eight",
-        salary: "2000-5000",
-        location: "Dhanmondi"
-
-
-
-
-    },
-    {
-        name: "Payel Kabir",
-        medium: "English",
-        subject: "  English",
-        class: "Nine-Ten",
-        salary: "5000-10000",
-        location: "Mirpur"
-
-    },
-    {
-        name: "Shahriar Mahmud",
-        medium: "English",
-        subject: "  Math",
-        class: "Eleven-Twelve",
-        salary: "10000-15000",
-        location: "Bashundhara"
-    }
-]
+// const SearchData = [
+//     {
+//         name: "Nayeem Zaman",
+//         medium: "Bangla",
+//         subject: "  Bangla",
+//         class: "Six-Eight",
+//         salary: "2000-5000",
+//         location: "Dhanmondi"
 
 
 
 
+//     },
+//     {
+//         name: "Payel Kabir",
+//         medium: "English",
+//         subject: "  English",
+//         class: "Nine-Ten",
+//         salary: "5000-10000",
+//         location: "Mirpur"
+
+//     },
+//     {
+//         name: "Shahriar Mahmud",
+//         medium: "English",
+//         subject: "  Math",
+//         class: "Eleven-Twelve",
+//         salary: "10000-15000",
+//         location: "Bashundhara"
+//     }
+// ]
 
 
+
+
+
+// console.log(SearchData);
 
 
 const Search = () => {
     return (
         <div className="search_tutor">
             <Navbars></Navbars>
-
+           
             <div className="row pt-5 ">
                 <div className=" col-md-7 ">
 
 
-                    <form role="form" method="post" action>
+                    <form className="form-control" method="post" action>
                         <h2 className="text-center">Search Tutor</h2>
                         {/* select medium  */}
                         <div className="select_class">
@@ -130,6 +130,11 @@ const Search = () => {
                         {/* <SearchIcon></SearchIcon> */}
                     </form>
 
+
+
+                   
+                   
+
                 </div>
 
 
@@ -139,12 +144,13 @@ const Search = () => {
 
 
             {/* passing search results to array */}
-            <div className="row">
+            {/* <div className="row">
                 {
 
                     SearchData.map(info => <SearchResult info={info}></SearchResult>)
+                   
                 }
-            </div>
+            </div> */}
 
 
 

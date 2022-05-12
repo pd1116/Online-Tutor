@@ -14,8 +14,10 @@ const Clients = ({ clients }) => {
 
     return (
         <div className="clients text-left">
+             
 
             <div className="userss">
+            <h4 className="py-2 text-info pb-0 mb-0"> Dashboard</h4>
                 <div className="row text-center text-md-left">
 
                     <div className="col-12 col-md-3 m-4 bg-info clientsinfo">
@@ -74,7 +76,7 @@ const Clients = ({ clients }) => {
                                     clients.role === "Teacher" ?
                                         <td className="bg-danger text-light "> {clients.name}</td>
                                         :
-                                        <td className="text-dark"> {clients.name}</td>
+                                        <td className="text-dark bg-success"> {clients.name}</td>
 
 
 
@@ -83,7 +85,7 @@ const Clients = ({ clients }) => {
                                     clients.role === "Teacher" ?
                                         <td className="bg-danger text-light"> {clients.mail}</td>
                                         :
-                                        <td className="text-dark"> {clients.mail}</td>
+                                        <td className="text-dark bg-success"> {clients.mail}</td>
 
 
 
@@ -92,7 +94,7 @@ const Clients = ({ clients }) => {
                                     clients.role === "Teacher" ?
                                         <td className="bg-danger text-light"> {clients.phone}</td>
                                         :
-                                        <td className="text-dark"> {clients.phone}</td>
+                                        <td className="text-dark bg-success"> {clients.phone}</td>
 
 
 
@@ -101,7 +103,7 @@ const Clients = ({ clients }) => {
                                     clients.role === "Teacher" ?
                                         <td className="bg-danger text-light"> {clients.gender}</td>
                                         :
-                                        <td className="text-dark"> {clients.gender}</td>
+                                        <td className="text-dark bg-success"> {clients.gender}</td>
 
 
 
@@ -110,7 +112,7 @@ const Clients = ({ clients }) => {
                                     clients.role === "Teacher" ?
                                         <td className="bg-danger text-light"> {clients.role}</td>
                                         :
-                                        <td className="text-dark"> {clients.role}</td>
+                                        <td className="text-dark bg-success"> {clients.role}</td>
 
 
 

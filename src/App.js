@@ -68,7 +68,7 @@ function App() {
               <Search></Search>
             </Route>
             <Route path="/searchresult">
-              <SearchResult></SearchResult>
+             <SearchResult></SearchResult>
             </Route>
 
             <Route path="/login">

@@ -46,6 +46,7 @@ const handleApprove=(id)=>{
                                 <th className="text-light" scope="col">Action</th>
                             </tr>
                         </thead>
+                        
 
 
                         <tbody className="text-none">
