@@ -23,7 +23,7 @@ const StudentProfile = () => {
         })
             .then(res => res.json())
             .then(data => setUserData(data));
-    }, [])
+    }, [user.email])
 
     useEffect(() => {
         fetch('http://localhost:4000/updateinfo2')

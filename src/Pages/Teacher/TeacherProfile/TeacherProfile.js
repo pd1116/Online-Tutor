@@ -27,7 +27,7 @@ const TeacherProfile = () => {
             .then(res => res.json())
            
             .then(data => setUserData(data));
-    }, [])
+    }, [user.email])
 
 
     //update info calling
