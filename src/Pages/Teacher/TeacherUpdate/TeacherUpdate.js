@@ -29,7 +29,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
             .then(res => res.json())
             
             .then(data => setIsUser(data));
-    }, [])
+    }, [user.email])
  
     const handleOnBlur = e => {
 

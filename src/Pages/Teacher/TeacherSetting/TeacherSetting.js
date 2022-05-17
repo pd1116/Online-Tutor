@@ -16,7 +16,7 @@ Modal.setAppElement('#root');
 
 const TeacherSetting = ({ modalIsOpen, closeModal }) => {
     const handleOnBlur = e => {
-        const field = e.target.name;
+        // const field = e.target.name;
         const value = e.target.value;
         console.log( value);
         

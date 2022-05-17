@@ -3,44 +3,7 @@ import { Card } from 'react-bootstrap';
 import teacherimg from '../../images/teacherimg.jpg'
 import Header from '../Header/Header';
 import Navbars from '../Navbars/Navbars';
-import SearchData from './SearchData.json';
-
-
-// const SearchData = [
-//     {
-//         name: "Nayeem Zaman",
-//         medium: "Bangla",
-//         subject: "  Bangla",
-//         class: "Six-Eight",
-//         salary: "2000-5000",
-//         location: "Dhanmondi"
-
-
-
-
-//     },
-//     {
-//         name: "Payel Kabir",
-//         medium: "English",
-//         subject: "  English",
-//         class: "Nine-Ten",
-//         salary: "5000-10000",
-//         location: "Mirpur"
-
-//     },
-//     {
-//         name: "Shahriar Mahmud",
-//         medium: "English",
-//         subject: "  Math",
-//         class: "Eleven-Twelve",
-//         salary: "10000-15000",
-//         location: "Bashundhara"
-//     }
-// ]
-
-
-// console.log(SearchData);
-
+ 
 
 
 const SearchResult = () => {

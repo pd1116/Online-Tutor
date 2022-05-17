@@ -11,7 +11,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import HomeIcon from '@mui/icons-material/Home';
 import PaidIcon from '@mui/icons-material/Paid';
 const Sidebar = () => {
-    const { user, logout } = useAuth();
+    const {   logout } = useAuth();
    
     return (
         <div className="sidebar d-flex flex-column justify-content-between py-5 px-5" style={{ height: "100vh" }}>
