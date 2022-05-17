@@ -7,6 +7,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const Navbars = () => {
 
     const { user  } = useAuth();
+    console.log("Userof the system",user);
     
     //   const { user } = useAuth();
   
