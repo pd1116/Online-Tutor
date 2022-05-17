@@ -11,7 +11,7 @@ import stdimg1 from "../../../images/avatar2.webp";
 const TeacherNewsfeed = ({ postinfo }) => {
    
     // const {name, email, subject, className, medium, salary, institute, phone, location} = postinfo;
-    const { user, logout } = useAuth();
+    const { user } = useAuth();
    
     const [userData, setUserData] = useState([]);
 
@@ -23,15 +23,10 @@ const TeacherNewsfeed = ({ postinfo }) => {
         })
             .then(res => res.json())
             .then(data => setUserData(data));
-    }, [])
+    }, [user.email])
 
     const hendleApply = e => {
-        // document.getElementById("myBtn").innerText=" ";
-
-        // document.getElementById("myBtn").innerText="wowo";
-
-        // console.log(document.getElementById("myBtn").innerText);
-
+      
 
         const applicatDetails = {
             email: user.email,
@@ -49,8 +44,7 @@ const TeacherNewsfeed = ({ postinfo }) => {
                 body: JSON.stringify(applicatDetails)
         })
             .then(res => res.json())
-            // .then(data => setUserData(data))
-            // .then(data => console.log("main data",data))
+          
             .catch(err => console.log(err))
      
             e.preventDefault();
@@ -72,7 +66,7 @@ const TeacherNewsfeed = ({ postinfo }) => {
 
         <div className="col-md-6 ">
             <Card className="techers_card py-3 m-3 w-70">
-                {/* <img className="cardimg mx-auto d-block" variant="top" src="" alt="" /> */}
+        
 
                 <Card.Body className="row">
 

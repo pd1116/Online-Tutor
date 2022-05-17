@@ -30,7 +30,7 @@ const StudentUpdate = ({ modalIsOpen2, closeModal2 }) => {
             .then(res => res.json())
 
             .then(data => setIsStudent(data));
-    }, [])
+    }, [user.email])
 
     const handleOnBlur = e => {
 

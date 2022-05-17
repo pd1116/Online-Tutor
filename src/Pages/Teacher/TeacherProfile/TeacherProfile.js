@@ -25,7 +25,7 @@ const TeacherProfile = () => {
             body: JSON.stringify({ email: user.email })
         })
             .then(res => res.json())
-            // .then(data => console.log(data));
+           
             .then(data => setUserData(data));
     }, [])
 

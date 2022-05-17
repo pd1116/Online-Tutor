@@ -8,7 +8,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const TeacherNavbar = ( ) => {
 
      
-    const { user, logout } = useAuth();
+    const { user  } = useAuth();
     return (
         <div className="">
 

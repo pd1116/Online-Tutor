@@ -4,20 +4,19 @@ import teacherimg from '../../../images/teacherimg.jpg';
 
 import Header from '../../../Components/Header/Header';
 import StudentNavbar from '../StudentNavbar/StudentNavbar';
-import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
+ 
 
 const Notification = () => {
-
-    // console.log("user.email");
+ 
     const [applicantresponse, setapplicantresponse] = useState([]);
     console.log(applicantresponse[0]);
     useEffect(() => {
         fetch('http://localhost:4000/applicantresponse')
             .then(res => res.json())
-            // .then(data => console.log(data))
+           
             .then(data => setapplicantresponse(data))
     }, [])
-    // console.log(" myuser:", applicantresponse[0]);
+   
     // applicantresponse
     return (
         <div>
@@ -25,7 +24,7 @@ const Notification = () => {
             <Header></Header>
             <StudentNavbar></StudentNavbar>
             {applicantresponse[0]?.email ?
-            // { applicantresponse[applicantresponse.length - 1].email ?
+            
                 <Card className="techers_card py-3 mx-auto m-5 w-50">
                
                     <Card.Body className="row">

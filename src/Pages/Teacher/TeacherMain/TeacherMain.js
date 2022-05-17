@@ -11,7 +11,7 @@ const TeacherMain = () => {
         fetch('http://localhost:4000/postinfo')
             .then(res => res.json())
             .then(data => setPostinfo(data))
-        // .then(data => console.log(data))
+        
     }, [])
 
 

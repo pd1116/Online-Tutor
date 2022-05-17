@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 
 import Header from '../../../Components/Header/Header';
-// import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
+ 
 import TeacherNavbar from '../TeacherNavbar/TeacherNavbar';
 const TeacherNotification = () => {
-
-    // const { user } = useAuth();
+ 
     const [PaymentDetails, setPaymentDetails] = useState([]);
 
     useEffect(() => {

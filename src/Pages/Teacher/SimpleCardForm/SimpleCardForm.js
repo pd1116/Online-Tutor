@@ -4,27 +4,16 @@ import TeacherSidebar from '../TeacherSidebar/TeacherSidebar';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 
 const SimpleCardForm = () => {
-    const { user, logout } = useAuth();
+    const { user } = useAuth();
     console.log(user);
-    const [payment,setPayment] =useState([])
+    // const [payment,setPayment] =useState([])
 
     const stripe = useStripe();
     const elements = useElements();
     const [paymentError, setPaymentError] = useState(null);
     const [paymentSuccess, setPaymentSuccess] = useState(null);
 
-    const teacherEmail = user.email;
-    // const handleClick = e => {
-    //     // alert(user.email)
-       
-    //     fetch('http://localhost:4000/Payment',{
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ email: user.email })
-    //     })
-    //         .then(res => res.json())
-    //     e.preventDefault();
-    // }
+ 
 
 
     const handleSubmit = async (event) => {

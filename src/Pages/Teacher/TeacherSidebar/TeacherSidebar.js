@@ -1,14 +1,14 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+ 
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import HomeIcon from '@mui/icons-material/Home';
 import PaidIcon from '@mui/icons-material/Paid';
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 const TeacherSidebar = () => {
-    const { user, logout } = useAuth();
+    const {  logout } = useAuth();
    
     return (
         <div className="sidebar d-flex flex-column justify-content-between py-5 px-5" style={{ height: "100vh" }}>

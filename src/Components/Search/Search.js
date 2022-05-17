@@ -55,7 +55,7 @@ const Search = () => {
                 <div className=" col-md-7 ">
 
 
-                    <form className="form-control" method="post" action>
+                    <form className="form-control w-75 mx-auto" method="post" action>
                         <h2 className="text-center">Search Tutor</h2>
                         {/* select medium  */}
                         <div className="select_class">

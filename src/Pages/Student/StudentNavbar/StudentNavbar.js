@@ -6,7 +6,7 @@ import useAuth from '../../../Components/Login/FirebaseConfig/useAuth';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const StudentNavbar = () => {
-    const { user, logout } = useAuth();
+    const { user  } = useAuth();
     return (
         <div className="">
 

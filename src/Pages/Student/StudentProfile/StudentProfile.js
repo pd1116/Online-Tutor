@@ -11,7 +11,7 @@ import StudentUpdate from '../StudentUpdate/StudentUpdate';
 import stdimg from '../../../images/avatar2.webp'
 import { useEffect } from 'react';
 const StudentProfile = () => {
-    const { user, logout } = useAuth();
+    const { user  } = useAuth();
     const [userData, setUserData] = useState([]);
     const [userUpdate, setUserUpdate] = useState([]);
 
@@ -52,18 +52,7 @@ const StudentProfile = () => {
         setIsOpen2(false);
     }
 
-//     import swal from 'sweetalert';
-
-// const popUp = () => {
-//         swal({
-//             title: "Your Information is Updated!",
-//             text: "",
-//             icon: "success",
-//             button: "OK",
-//         });
-//     }
-
-// onClick={popUp}
+ 
 
     return (
         <div className="StudentProfile">
@@ -72,9 +61,7 @@ const StudentProfile = () => {
             <div className="row ">
                 <div className="prfilenav  col-md-6  pt-5">
                     <Link className="btn  btn-success s w-50" to="/StudentProfile">About</Link><br />
-                    {/* <Link className="btn btn-outline-success w-50" to="/posts">Post</Link> <br /> */}
-
-
+                     
                     <button onClick={openModal} className="btn btn-outline-success w-50 " >Setting</button>
 
 
@@ -93,22 +80,7 @@ const StudentProfile = () => {
                                     <Card.Text className="card_text">
 
                                         {
-                                            //  user?.email === userData[0]?.mail?
-                                            //     <div className="information">
-                                            //         <p><b> Name:  </b>{userData[0]?.name}</p>
-                                            //         <p><b> Email:  </b>{userData[0]?.mail}</p>
-                                            //         <p><b> Phone: </b>{userData[0]?.phone}</p>
-                                            //         <p><b> Gender: </b>{userData[0]?.gender}</p>
-                                            //         <p><b> Institute: </b>{userData[0]?.institute}</p>
-                                            //     </div>
-                                            //     :
-                                            //     <div className="informationupdate">
-                                            //         <p><b> Name: </b> {userUpdate[0]?.name}</p>
-                                            //         <p><b> Email:  </b>{userUpdate[0]?.email}</p>
-                                            //         <p><b> Phone: </b>{userUpdate[0]?.phone}</p>
-                                            //         <p><b> Gender: </b>{userUpdate[0]?.gender}</p>
-                                            //         <p><b> Institute: </b>{userUpdate[0]?.institute}</p>
-                                            //     </div>
+                                            
 
                                             user?.email === userData[userData.length - 1]?.mail ?
                                                 <div className="information">
@@ -143,8 +115,7 @@ const StudentProfile = () => {
                                     </Card.Text>
 
                                     <button onClick={openModal2} className="btn btn-success">Update info</button>
-                                    {/* <button onClick={openModal} className="btn btn-outline-success w-50 " >Setting</button>  */}
-
+                                  
                                 </Card.Body>
                             </Card>
                         </div>

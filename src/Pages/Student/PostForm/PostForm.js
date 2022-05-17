@@ -1,8 +1,7 @@
-import { Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
+import { Typography, TextField, Button, CircularProgress  } from '@mui/material';
 import React, { useState } from 'react';
 import { Grid } from '@mui/material';
-import { NavLink, } from 'react-router-dom';
-
+ 
 
 import useAuth from '../../../Components/Login/FirebaseConfig/useAuth'
 
@@ -20,11 +19,11 @@ const  PostForm = () => {
 
     const [loginData, setLoginData] = useState({});
 
-    const { user, registerUser, Loading, authError } = useAuth();
+    const { user, registerUser, Loading  } = useAuth();
 
-// console.log(user.email);
+ 
     const handleOnBlur = e => {
-        // console.log(e);
+    
         const field = e.target.name;
         const value = e.target.value;
         const newLoginData = { ...loginData };

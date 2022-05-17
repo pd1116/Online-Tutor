@@ -36,7 +36,7 @@ const Newsfeed = ({ postinfo }) => {
                                 <img className="cardimg mx-auto d-block" variant="top" src={stdicons} alt="" />
 
                             </div>
-                            {/* <button className='btn btn-success w-50'>apply</button> */}
+                     
 
 
 

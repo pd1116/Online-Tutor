@@ -19,7 +19,7 @@ Modal.setAppElement('#root');
 const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
     const [loginData, setLoginData] = useState({});
     const [isUser, setIsUser] = useState(false);
-    const { user, registerUser, Loading, authError } = useAuth();
+    const { user,Loading } = useAuth();
     useEffect(() => {
         fetch('http://localhost:4000/isUser', {
             method: 'POST',
@@ -27,7 +27,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
             body: JSON.stringify({ email: user.email })
         })
             .then(res => res.json())
-            // .then(data => console.log(data));
+            
             .then(data => setIsUser(data));
     }, [])
  
@@ -51,7 +51,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
 
                 .then(data => setLoginData(data))
                 .catch(err => console.log(err))
-        // alert("kire vai")
+        
        
         console.log("User ki ache? ", isUser);
         if (isUser) {
@@ -63,12 +63,7 @@ const TeacherUpdate = ({ modalIsOpen2, closeModal2 }) => {
             })
             .then(res => res.json())
             .then(data => setIsUser(data))
-            // .then(data => console.log(data));
-            // .then(data => {
-            //     if (data) {
-            //         console.log("Updated Successfully")
-            //     }
-            // })
+        
         }
         else {
             fetch('http://localhost:4000/UpdateTutor', {
